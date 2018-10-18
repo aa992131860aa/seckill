@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.seckill.dao.InteractDao">
+
+    <select id="gainFinanceList" resultType="Finance">
+        SELECT * FROM finance WHERE 1=1
+        <if test="isAdmin==0">
+            AND user_id=#{userId}
+        </if>
+        ORDER BY id DESC
+        limit #{page},#{pageSize}
+    </select>
+    <select id="gainFinanceListTotal" resultType="Integer">
+        SELECT count(*) FROM finance WHERE 1=1
+        <if test="isAdmin==0">
+            AND user_id=#{userId}
+        </if>
+
+    </select>
+
+
+    <insert id="insertFinance">
+        INSERT INTO finance(name,code,custom_id,sale,profit,tax,user_id,date)
+        VALUES (#{name},#{code},#{customId},#{sale},#{profit},#{tax},#{userId},#{date})
+    </insert>
+
+    <update id="updateFinanceId">
+        UPDATE finance SET name=#{name},code=#{code},custom_id=#{customId},sale=#{sale},profit=#{profit},tax=#{tax},user_id=#{userId},date=#{date}
+        WHERE id=#{id}
+    </update>
+
+
+    <select id="gainQueryFinanceList" resultType="Finance">
+        SELECT * FROM finance WHERE 1=1
+        <if test="isAdmin==0">
+            AND user_id=#{userId}
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+
+        <if test="startDate!=''">
+            AND date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+        ORDER BY id DESC
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainQueryFinanceListTotal" resultType="Integer">
+        SELECT count(*) FROM finance WHERE 1=1
+        <if test="isAdmin==0">
+            AND user_id=#{userId}
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+
+        <if test="startDate!=''">
+            AND date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+
+
+    </select>
+
+    <delete id="delFinanceId">
+        DELETE  FROM  finance WHERE  id=#{id}
+    </delete>
+    <select id="gainFinance" resultType="Finance">
+        SELECT  * FROM  finance WHERE id=#{id}
+    </select>
+
+
+    <select id="gainDotList" resultType="Dot">
+        SELECT * FROM dot ORDER  BY id DESC  limit #{page},#{pageSize}
+    </select>
+
+
+    <select id="gainDotListTotal" resultType="Integer">
+        SELECT count(*) FROM dot
+    </select>
+
+
+    <insert id="insertDot">
+        INSERT INTO  dot(no,content,remark) VALUES (#{no},#{content},#{remark})
+    </insert>
+
+
+    <update id="updateDotId">
+        UPDATE dot SET no=#{no},content=#{content},remark=#{remark} WHERE id=#{id}
+    </update>
+
+
+    <select id="gainQueryDotList" resultType="Dot">
+        SELECT * FROM dot WHERE no LIKE CONCAT('%',#{no},'%') ORDER BY id DESC  limit #{page},#{pageSize}
+    </select>
+
+
+    <select id="gainQueryDotListTotal" resultType="Integer">
+     SELECT count(*) FROM dot WHERE no LIKE CONCAT('%',#{no},'%')
+</select>
+
+    <delete id="delDotId">
+        DELETE FROM dot WHERE id=#{id}
+    </delete>
+
+
+    <select id="gainDot" resultType="Dot">
+        SELECT  * FROM dot WHERE id=#{id}
+    </select>
+
+
+    <select id="gainSafeList" resultType="Safe">
+          SELECT * FROM  safe WHERE  type=#{type} AND date=#{date} limit #{page},#{pageSize}
+      </select>
+
+    <select id="gainSafeListTotal" resultType="Integer">
+        SELECT COUNT(*) FROM  safe WHERE  type=#{type}  AND date=#{date}
+    </select>
+
+
+    <select id="gainSafeListAll" resultType="Safe">
+        SELECT * FROM  safe WHERE  type=#{type} limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainSafeListAllTotal" resultType="Integer">
+        SELECT COUNT(*) FROM  safe WHERE  type=#{type}
+    </select>
+
+    <select id="gainSafeListQuery" resultType="Safe">
+        SELECT * FROM safe WHERE type=#{type}
+        <if test="userName!=''">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+        <if test="startDate!=''">
+            AND date>=#{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainSafeListTotalQuery" resultType="Integer">
+        SELECT count(*) FROM safe WHERE type=#{type}
+        <if test="userName!=''">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+        <if test="startDate!=''">
+            AND date>=#{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+
+
+    </select>
+
+    <insert id="insertSafe">
+          INSERT INTO safe(date,type,dot,is_normal,content,urls,user_name)
+          VALUES (#{date},#{type},#{dot},#{isNormal},#{content},#{srcUrls},#{userName})
+      </insert>
+
+    <select id="gainSafe" resultType="Safe">
+        SELECT * FROM safe WHERE dot=#{dot} AND date=#{date}
+    </select>
+
+    <update id="updateSafe">
+          UPDATE safe set dot=#{dot},is_normal=#{isNormal},content=#{content},urls=#{srcUrls},user_name=#{userName} WHERE id=#{id}
+      </update>
+
+    <insert id="insertSafeDeal">
+         INSERT INTO safe_deal(safe_id,date,content,user_name)
+         VALUES (#{safeId},#{date},#{content},#{userName})
+     </insert>
+
+    <update id="updateSafeIsDeal">
+    UPDATE safe SET  is_deal=#{isDeal} WHERE id=#{safeId}
+    </update>
+
+    <delete id="delSafeDeal">
+        DELETE  FROM safe_deal WHERE  safe_id=#{safeId}
+    </delete>
+
+
+    <select id="gainSafeDealList" resultType="SafeDeal">
+        SELECT * FROM safe_deal WHERE safe_id= #{safeId}
+    </select>
+
+
+    <select id="gainFeedbackList" resultType="Feedback">
+        SELECT * FROM feedback
+         WHERE user_name=#{userName}
+         ORDER BY id DESC
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainFeedbackListTotal" resultType="Integer">
+        SELECT count(*) FROM feedback
+         WHERE user_name=#{userName}
+    </select>
+
+    <select id="gainFeedbackAllList" resultType="Feedback">
+        SELECT * FROM feedback ORDER BY id DESC
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainFeedbackAllListTotal" resultType="Integer">
+        SELECT count(*) FROM feedback
+    </select>
+
+    <select id="gainFeedbackQuery" resultType="Feedback">
+        SELECT * FROM feedback
+        where 1=1
+        <if test="userName!=''">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+        <if test="startDate!=''">
+            AND date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+        ORDER BY id DESC
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainFeedbackQueryTotal" resultType="Integer">
+        SELECT count(*) FROM feedback
+        where 1=1
+        <if test="userName!=''">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+        <if test="startDate!=''">
+            AND date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND date <![CDATA[<=]]> #{endDate}
+        </if>
+    </select>
+
+
+    <update id="updateFeedback">
+    UPDATE feedback SET content=#{content},
+    type=#{type},date=#{date},urls=#{urls},
+    user_name=#{userName},is_deal=#{isDeal},title=#{title}
+
+    WHERE id=#{id}
+    </update>
+
+
+    <insert id="insertFeedback">
+    INSERT INTO feedback(content,type,date,urls,user_name,is_deal,title)
+    VALUES (#{content},#{type},#{date},#{urls},#{userName},#{isDeal},#{title})
+    </insert>
+
+    <insert id="insertFeedbackDeal">
+      INSERT INTO feedback_deal(feedback_id,date,content,user_name)
+      VALUES (#{feedbackId},#{date},#{content},#{userName})
+</insert>
+
+    <update id="updateFeedbackIsDeal">
+    UPDATE feedback SET is_deal=#{isDeal} WHERE id=#{feedbackId}
+    </update>
+
+    <delete id="delFeedbackDeal">
+        DELETE  FROM  feedback_deal WHERE feedback_id=#{feedbackId}
+    </delete>
+    <select id="gainFeedback" resultType="Feedback">
+    SELECT  * FROM  feedback WHERE id=#{id}
+    </select>
+    <select id="gainFeedbackDeal" resultType="FeedbackDeal">
+        SELECT  * FROM  feedback_deal WHERE feedback_id=#{feedbackId}
+    </select>
+    <select id="gainHouseList" resultType="House">
+
+        SELECT * FROM house WHERE chart_loc !='' AND floor=#{floor}
+
+        <if test="type=='house'">
+            AND ad_id is NULL
+            AND car_id is NULL
+
+        </if>
+        <if test="type=='ad'">
+            AND build_area is NULL
+            AND car_id is NULL
+
+        </if>
+
+        <if test="type=='car'">
+            AND ad_id is NULL
+            AND build_area is NULL
+
+        </if>
+
+
+
+    </select>
+
+    <select id="gainHouseSite" resultType="HouseSite">
+        SELECT * FROM  house_site
+    </select>
+    <update id="updateHouseSite">
+        UPDATE house_site SET `column`=#{column},row=#{row}
+    </update>
+
+
+</mapper>

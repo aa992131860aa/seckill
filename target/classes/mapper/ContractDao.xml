@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.seckill.dao.ContractDao">
+
+    <select id="gainFree" resultType="Free">
+        SELECT * FROM free
+    </select>
+    <select id="gainGoodsStatus" resultType="GoodsStatus">
+        SELECT  * FROM goods_status
+    </select>
+    <select id="gainContact" resultType="Contact">
+        SELECT  * FROM  contact
+    </select>
+
+    <select id="gainHouse" resultType="House">
+        SELECT  * FROM  house
+         WHERE
+         location LIKE CONCAT('%', #{loc}, '%')
+         AND ad_id is NULL
+         AND car_id is NULL
+         AND goods_status_id = 8
+         or
+         link_house LIKE CONCAT('%',#{loc},'%')
+         AND ad_id is NULL
+         AND car_id is NULL
+         AND goods_status_id = 8
+
+
+    </select>
+
+    <select id="gainAd" resultType="House">
+        SELECT  * FROM  house h,ad a WHERE  location LIKE CONCAT('%', #{loc}, '%')
+             AND build_area is NULL
+             AND car_id is NULL
+             AND a.id = h.ad_id
+             AND h.goods_status_id = 8
+
+    </select>
+    <update id="updateCustomCarReg">
+        UPDATE car_reg SET loc=#{loc} WHERE name=#{person} AND phone=#{phone} AND no=#{no} AND uuid=(SELECT uuid FROM custom WHERE id=#{customId})
+    </update>
+
+    <select id="gainCar" resultType="House">
+        SELECT  * FROM  house h,car a WHERE  location LIKE CONCAT('%', #{loc}, '%')
+        AND ad_id is NULL
+        AND build_area is NULL
+        AND a.id = h.car_id
+        AND h.goods_status_id = 8 OR location LIKE CONCAT('%', #{loc}, '%')
+        AND ad_id is NULL
+        AND build_area is NULL
+        AND a.id = h.car_id
+        AND h.car_id=5
+
+    </select>
+    <select id="gainContractList" resultType="Contract">
+        SELECT  * FROM  contract WHERE style = #{style}   ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainContractListTotal" resultType="Integer">
+        SELECT  count(id) FROM  contract WHERE style = #{style}
+    </select>
+    <select id="gainContractListDel" resultType="Contract">
+        SELECT  * FROM  contract WHERE  del = 1 ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainContractListDelTotal" resultType="Integer">
+        SELECT  count(id) FROM  contract WHERE   del = 1
+    </select>
+
+    <select id="gainContractListConfirm" resultType="Contract">
+        SELECT  * FROM  contract WHERE  is_finish = 0 AND is_ok=0  ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainContractListConfirmTotal" resultType="Integer">
+        SELECT  count(id) FROM  contract WHERE  is_finish = 0 AND is_ok=0
+    </select>
+
+    <select id="gainContractListCancel" resultType="Contract">
+        SELECT  * FROM  contract WHERE   is_ok=1 ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainContractListCancelTotal" resultType="Integer">
+        SELECT  count(id) FROM  contract WHERE   is_ok=1
+    </select>
+
+    <update id="updateIsOk">
+       UPDATE  contract SET  is_ok=#{isOk},`explain`=#{explain},approval=#{approval},approval_date=#{approvalDate} WHERE uuid=#{uuid}
+   </update>
+
+    <select id="gainContract" resultType="Contract">
+        SELECT  * FROM  contract WHERE uuid = #{uuid}
+    </select>
+
+    <insert id="insertContract">
+         INSERT  INTO contract(user_name,house1,house2,house3,code,no,uuid,code_auto,remark,link_man,phone,start_date,end_date,warn_day,type,style,
+         table1, table2, table2H, table3, table11, table22, table33, table44, table55, table66, table77, table88,`explain`,custom_id,total)
+         VALUES (#{userName},#{house1},#{house2},#{house3},#{code},#{no},#{uuid},#{codeAuto},#{remark},#{linkMan},#{phone},#{startDate},#{endDate},#{warnDay},#{type},#{style},
+         #{table1}, #{table2}, #{table2H}, #{table3}, #{table11}, #{table22}, #{table33}, #{table44}, #{table55}, #{table66}, #{table77}, #{table88},#{explain},#{customId},#{total}
+         )
+     </insert>
+    <update id="modifyContract">
+        UPDATE contract SET user_name=#{userName},house1=#{house1},house2=#{house2},house3=#{house3},code=#{code}, code_auto=#{codeAuto},remark=#{remark},link_man=#{linkMan},phone=#{phone},start_date=#{startDate},end_date=#{endDate},warn_day =#{warnDay},type=#{type},style=#{style},
+         table1=#{table1}, table2=#{table2},table2H =#{table2H}, table3=#{table3}, table11=#{table11}, table22=#{table22}, table33=#{table33}, table44=#{table44}, table55=#{table55}, table66=#{table66}, table77=#{table77},table88= #{table88},`explain`=#{explain},is_ok=0,custom_id=#{customId},total=#{total}
+              WHERE  uuid=#{uuid}
+    </update>
+    <update id="updateDel">
+        UPDATE contract SET del = 1 WHERE uuid = #{uuid}
+    </update>
+    <insert id="insertAdContract">
+        INSERT  INTO contract(user_name,code,no,uuid,code_auto,remark,link_man,phone,start_date,end_date,warn_day,type,style,
+        table1, table2, table2H, table3, table11, table33,`explain`,custom_id,total)
+        VALUES (#{userName},#{code},#{no},#{uuid},#{codeAuto},#{remark},#{linkMan},#{phone},#{startDate},#{endDate},#{warnDay},#{type},#{style},
+        #{table1}, #{table2}, #{table2H}, #{table3}, #{table11},  #{table33},#{explain},#{customId},#{total}
+        )
+    </insert>
+
+
+    <update id="modifyAdContract">
+        UPDATE contract SET user_name=#{userName},code=#{code}, code_auto=#{codeAuto},remark=#{remark},link_man=#{linkMan},phone=#{phone},start_date=#{startDate},end_date=#{endDate},warn_day =#{warnDay},type=#{type},style=#{style},
+        table1=#{table1}, table2=#{table2},table2H =#{table2H}, table3=#{table3}, table11=#{table11},  table33=#{table33},`explain`=#{explain},is_ok=0,custom_id=#{customId},total=#{total}
+        WHERE  uuid=#{uuid}
+    </update>
+
+    <insert id="insertCarContract">
+        INSERT  INTO contract(user_name,code,no,uuid,code_auto,remark,link_man,phone,start_date,end_date,warn_day,type,style,
+        table1, table2, table2H, table3, table11, table33,`explain`,custom_id,total)
+        VALUES (#{userName},#{code},#{no},#{uuid},#{codeAuto},#{remark},#{linkMan},#{phone},#{startDate},#{endDate},#{warnDay},#{type},#{style},
+        #{table1}, #{table2}, #{table2H}, #{table3}, #{table11},  #{table33},#{explain},#{customId},#{total}
+        )
+    </insert>
+
+
+    <update id="modifyCarContract">
+        UPDATE contract SET user_name=#{userName},code=#{code}, code_auto=#{codeAuto},remark=#{remark},link_man=#{linkMan},phone=#{phone},start_date=#{startDate},end_date=#{endDate},warn_day =#{warnDay},type=#{type},style=#{style},
+        table1=#{table1}, table2=#{table2},table2H =#{table2H}, table3=#{table3}, table11=#{table11},  table33=#{table33},`explain`=#{explain},is_ok=0,custom_id=#{customId},total=#{total}
+        WHERE  uuid=#{uuid}
+    </update>
+
+    <select id="dateTotal" resultType="Integer">
+         SELECT ifnull(max(substring(no,3,10)),CONCAT(#{date},'00')) FROM contract WHERE no LIKE  CONCAT('%',#{date},'%')
+     </select>
+    <select id="query" resultType="Contract">
+        SELECT * FROM contract WHERE 1=1
+        <if test="no!=''">
+            AND no LIKE CONCAT('%',#{no},'%')
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="linkMan!=''">
+            AND link_man LIKE CONCAT('%',#{linkMan},'%')
+        </if>
+        <if test="number!=''">
+            AND table1 LIKE CONCAT('%',#{number},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        AND style=#{style} limit #{page},#{pageSize}
+    </select>
+    <select id="queryTotal" resultType="Integer">
+        SELECT count(id) FROM contract WHERE 1=1
+        <if test="no!=''">
+            AND no LIKE CONCAT('%',#{no},'%')
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="linkMan!=''">
+            AND link_man LIKE CONCAT('%',#{linkMan},'%')
+        </if>
+        <if test="number!=''">
+            AND table1 LIKE CONCAT('%',#{number},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        AND style=#{style}
+    </select>
+
+    <select id="queryDel" resultType="Contract">
+        SELECT * FROM contract WHERE 1=1
+        <if test="no!=''">
+            AND no LIKE CONCAT('%',#{no},'%')
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="linkMan!=''">
+            AND link_man LIKE CONCAT('%',#{linkMan},'%')
+        </if>
+        <if test="number!=''">
+            AND table1 LIKE CONCAT('%',#{number},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+        AND del = 1
+        limit #{page},#{pageSize}
+    </select>
+    <select id="queryDelTotal" resultType="Integer">
+        SELECT count(id) FROM contract WHERE 1=1
+        <if test="no!=''">
+            AND no LIKE CONCAT('%',#{no},'%')
+        </if>
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="linkMan!=''">
+            AND link_man LIKE CONCAT('%',#{linkMan},'%')
+        </if>
+        <if test="number!=''">
+            AND table1 LIKE CONCAT('%',#{number},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+        AND del = 1
+
+    </select>
+    <delete id="del">
+        DELETE FROM  contract WHERE  uuid = #{uuid}
+    </delete>
+
+    <select id="gainContactSort" resultType="String">
+        SELECT sort FROM  contact WHERE  id = #{id}
+    </select>
+
+
+    <select id="gainCustomByLinkManAndRemark" resultType="Contract">
+        SELECT  * FROM  contract WHERE code_auto=#{linkMan} AND remark=#{remark}
+    </select>
+
+    <select id="gainCustomWarn" resultType="Contract">
+        SELECT * FROM contract WHERE DATE_ADD(NOW(),interval warn_day day) >= end_date AND NOW()<![CDATA[<=]]>end_date AND del = 0 limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainCustomWarnTotal" resultType="Integer">
+        SELECT count(id) count FROM contract WHERE DATE_ADD(NOW(),interval warn_day day) >= end_date AND NOW()<![CDATA[<=]]>end_date  AND del = 0
+    </select>
+
+
+    <insert id="insertTable38">
+        INSERT INTO  table3388(uuid,style,table33_money,table33_date,table33_warn,table88_start_date,table88_end_date,table88_warn)
+        VALUES (#{uuid},#{style},#{table33Money},#{table33Date},#{table33Warn},#{table88StartDate},#{table88EndDate},#{table88Warn})
+    </insert>
+
+    <insert id="insertTable77">
+        INSERT INTO  table77(uuid,start_date,end_date,total,discount,discount_total)
+        VALUES (#{uuid},#{startDate},#{endDate},#{total},#{discount},#{discountTotal})
+    </insert>
+
+    <update id="updateTable77IsConfirm">
+        UPDATE table77 SET is_confirm=#{isConfirm} WHERE  id =#{id}
+    </update>
+
+    <delete id="delTable38">
+      DELETE FROM table3388 WHERE  uuid = #{uuid}
+    </delete>
+
+    <delete id="delTable77">
+        DELETE FROM table77 WHERE  uuid = #{uuid}
+    </delete>
+    <select id="gainMaxDegree" resultType="FreeExport">
+        SELECT * FROM free_export WHERE loc=#{loc} AND  type=#{type} AND degree!='' ORDER BY create_time DESC LIMIT 2
+    </select>
+    <select id="gainMinDate" resultType="String">
+        SELECT start_date FROM table77 WHERE is_confirm = 0 AND uuid=#{uuid} OR uuid = #{uuid} AND is_confirm = 2 ORDER BY start_date ASC limit 1
+    </select>
+    <update id="updateHouse">
+        UPDATE house SET goods_status_id = #{goodsStatusId} WHERE location=#{loc}
+    </update>
+    <insert id="insertTable1">
+        INSERT INTO  table1(uuid,style,loc,pay_date)
+        VALUES (#{uuid},#{style},#{loc},#{payDate})
+    </insert>
+
+    <delete id="delTable1">
+        DELETE FROM table1 WHERE  uuid = #{uuid}
+    </delete>
+
+    <select id="gainContractWarn" resultType="Contract">
+
+       SELECT  * FROM  (SELECT c.*,'contract' warn_style FROM contract c LEFT JOIN table3388 fd ON c.uuid = fd.uuid
+        where DATE_ADD(NOW(),interval fd.table33_warn day) >= fd.table33_date AND NOW()<![CDATA[<=]]> fd.table33_date AND is_confirm=0 AND del=0
+        UNION ALL
+        SELECT c.*,'energy' warn_style FROM contract c LEFT JOIN table3388 fd ON c.uuid = fd.uuid
+        where DATE_ADD(NOW(),interval fd.table88_warn day) >= fd.table88_start_date AND NOW()<![CDATA[<=]]> fd.table88_start_date AND is_confirm=0 AND del=0
+        group by c.uuid) b limit #{page},#{pageSize}
+
+    </select>
+
+    <select id="gainContractWarnTotal" resultType="Integer">
+
+       SELECT  count(*) FROM  (SELECT c.*,'contract' warn_style FROM contract c LEFT JOIN table3388 fd ON c.uuid = fd.uuid
+        where DATE_ADD(NOW(),interval fd.table33_warn day) >= fd.table33_date AND NOW()<![CDATA[<=]]> fd.table33_date AND is_confirm=0 AND del=0
+        UNION ALL
+        SELECT c.*,'energy' warn_style FROM contract c LEFT JOIN table3388 fd ON c.uuid = fd.uuid
+        where DATE_ADD(NOW(),interval fd.table88_warn day) >= fd.table88_start_date AND NOW()<![CDATA[<=]]> fd.table88_start_date AND is_confirm=0 AND del=0
+        group by c.uuid) b
+
+    </select>
+
+    <select id="gainFreeExportByLocAndDate" resultType="Integer">
+        SELECT count(id) FROM free_export WHERE loc=#{loc} AND date=#{date}  AND degree!=''
+    </select>
+
+    <update id="updateDeadline">
+        UPDATE house SET goods_status_id = 8 WHERE location in ( SELECT location FROM ( SELECT DISTINCT h.location FROM contract c ,table1 t,house h,goods_status gs WHERE t.loc = h.location AND c.uuid = t.uuid  AND NOW() >c.end_date  AND gs.id=h.goods_status_id AND gs.`name` != '闲置' OR t.loc = h.location AND c.uuid = t.uuid  AND NOW() >c.contract_end  AND gs.id=h.goods_status_id AND gs.`name` != '闲置' ) AS a)
+    </update>
+    <update id="updateDeadlineDel">
+      UPDATE house SET goods_status_id = 8 WHERE location NOT IN (SELECT location FROM (SELECT h.location FROM house h, contract c WHERE c.table1   LIKE CONCAT('%',h.location,'%')) a)
+    </update>
+    <update id="updateDeadlineNo">
+        UPDATE house SET goods_status_id = 9 WHERE location  IN (SELECT location FROM (SELECT h.location  FROM house h, contract c WHERE c.table1   LIKE CONCAT('%',h.location,'%') AND NOW() <![CDATA[<]]> c.end_date AND c.contract_end is null OR c.table1   LIKE CONCAT('%',h.location,'%') AND NOW() <![CDATA[<]]> c.contract_end) a)
+    </update>
+    <select id="queryCancel" resultType="Contract">
+        SELECT * FROM contract c WHERE is_ok=1
+        <if test="code!=''">
+            AND c.code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+        ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+    <select id="queryCancelTotal" resultType="Integer">
+        SELECT count(id) FROM contract c WHERE is_ok=1
+        <if test="code!=''">
+            AND c.code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND approval_date >= #{startDate}
+        </if>
+
+        <if test="endDate!=''">
+            AND approval_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+    </select>
+    <!--将合同弄成已审批状态,可以在应收中查询-->
+    <update id="updateContractWater">
+        <if test="contractUuid==''">
+            UPDATE contract SET
+
+            <if test="type=='water'">
+                is_water=#{isWater}
+            </if>
+            <if test="type=='power'">
+                is_power=#{isWater}
+            </if>
+            <if test="type=='water'">
+                is_air=#{isWater}
+            </if>
+
+            ,is_ok=1 WHERE uuid= ( SELECT uuid FROM (SELECT uuid FROM contract
+            WHERE table1 like
+            CONCAT('%', #{loc}, '%') AND is_finish=0 LIMIT 1) a)
+        </if>
+        <if test="contractUuid!=''">
+            UPDATE contract SET
+            <if test="type=='water'">
+            is_water=#{isWater}
+            </if>
+            <if test="type=='power'">
+                is_power=#{isWater}
+            </if>
+            <if test="type=='water'">
+                is_air=#{isWater}
+            </if>,is_ok=1 WHERE uuid=#{contractUuid}
+        </if>
+
+    </update>
+
+    <update id="updateWaterLoc">
+        UPDATE  free_export SET  is_ok=1 WHERE loc = #{loc} AND  type = #{type}
+    </update>
+</mapper>

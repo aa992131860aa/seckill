@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.seckill.dao.HandleDao">
+    <select id="gainContractOne" resultType="Contract">
+        SELECT * FROM contract WHERE table1 LIKE  CONCAT('%',#{loc},'%')
+    </select>
+    <select id="gainContractList" resultType="Contract">
+        SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 GROUP BY custom_id DESC limit #{page},#{pageSize}
+      </select>
+    <select id="gainContractListTotal" resultType="Integer">
+       SELECT count(id) FROM  ( SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 GROUP BY custom_id) a
+    </select>
+    <select id="gainContractListAll" resultType="Contract">
+        SELECT c.* FROM contract c ,custom cu ,table1 t1 WHERE c.table1 LIKE CONCAT('%',t1.loc,'%') AND
+        c.custom_id=cu.id AND is_confirm = 0 AND is_ok=1 AND is_pay=0 AND c.is_finish=0 OR c.table1 LIKE
+        CONCAT('%',t1.loc,'%') AND c.custom_id=cu.id AND c.is_finish=0 AND is_pay=1 AND is_ok=1 OR c.table1 LIKE
+        CONCAT('%',t1.loc,'%') AND c.custom_id=cu.id AND is_water=1 GROUP BY custom_id DESC
+
+        <if test="codeCheck=='true' and locCheck=='true'">
+            ORDER BY
+            cu.`code` ,t1.loc
+
+            ASC
+        </if>
+
+        <if test="codeCheck=='true' and locCheck=='false'">
+            ORDER BY
+            cu.`code`
+
+            ASC
+        </if>
+
+        <if test="codeCheck=='false' and locCheck=='true'">
+            ORDER BY
+            t1.loc
+
+            ASC
+        </if>
+
+
+    </select>
+    <select id="gainContractListTotalAll" resultType="Integer">
+        SELECT count(id) FROM  ( SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 GROUP BY custom_id) a
+    </select>
+    <select id="gainContractListQuery" resultType="Contract">
+        SELECT * FROM contract
+        WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        OR is_finish=0 AND is_pay=1 AND is_ok=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        OR is_water=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        GROUP BY custom_id DESC limit #{page},#{pageSize}
+    </select>
+    <select id="gainContractListTotalQuery" resultType="Integer">
+        SELECT count(id) FROM ( SELECT * FROM contract
+        WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        OR is_finish=0 AND is_pay=1 AND is_ok=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        OR is_water=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        GROUP BY custom_id) a
+    </select>
+
+
+    <select id="gainContract" resultType="Contract">
+            SELECT * FROM contract WHERE code_auto=#{codeAuto} AND  remark=#{remark}
+    </select>
+    <select id="gainContractId" resultType="Contract">
+        SELECT * FROM contract WHERE custom_id=#{id} AND  is_ok=1 OR is_finish=0 AND is_pay=1
+    </select>
+
+    <select id="gainContractByCustomId" resultType="Contract">
+        SELECT * FROM contract WHERE custom_id=#{customId} AND  is_ok=1 OR is_finish=0 AND is_pay=1 AND custom_id=#{customId}  AND  is_ok=1
+    </select>
+    <update id="updateDebt">
+        UPDATE contract SET debt = #{debt} WHERE id=#{contractId}
+    </update>
+    <update id="updateTableM">
+        UPDATE contract SET  tableM=#{tableM} WHERE code_auto=#{codeAuto} AND remark=#{remark}
+    </update>
+    <select id="gainTableM" resultType="String">
+        SELECT tableM FROM contract WHERE code_auto=#{codeAuto} AND remark=#{remark} limit 1
+    </select>
+
+    <select id="gainTableMId" resultType="String">
+        SELECT tableM FROM contract WHERE id=#{id}
+    </select>
+
+    <select id="gainTableMList" resultType="TableM">
+        SELECT * FROM contract_table_m WHERE  custom_id=#{contractId}
+    </select>
+    <select id="gainTableMAllList" resultType="TableM">
+        SELECT id,contract_id, code_auto,remark,FORMAT(sum(moneyM),2) moneyM,custom_id FROM contract_table_m  GROUP BY custom_id limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainTableMAllListTotal" resultType="Integer">
+       SELECT COUNT(*) FROM (SELECT code_auto,remark,sum(moneyM) moneyM FROM contract_table_m  GROUP BY contract_id) a
+    </select>
+
+    <select id="gainTableMAllListQuery" resultType="TableM">
+
+        <if test="code==''">
+            SELECT id,contract_id, code_auto,remark,FORMAT(sum(moneyM),2) moneyM,custom_id FROM contract_table_m
+
+            GROUP BY custom_id limit #{page},#{pageSize}
+        </if>
+
+        <if test="code!=''">
+            SELECT c.id id, a.code_auto,a.remark,a.moneyM,a.custom_id FROM (SELECT contract_id,
+            code_auto,remark,FORMAT(sum(moneyM),2) moneyM,custom_id FROM
+            contract_table_m GROUP BY custom_id
+
+            ) a,custom c WHERE c.name=a.code_auto AND c.code LIKE CONCAT('%',#{code},'%')
+
+            limit #{page},#{pageSize}
+        </if>
+
+    </select>
+
+    <select id="gainTableMAllListTotalQuery" resultType="Integer">
+        <if test="code==''">
+            SELECT count(*) FROM contract_table_m
+
+        </if>
+
+        <if test="code!=''">
+            SELECT count(*) FROM (SELECT contract_id, code_auto,remark,FORMAT(sum(moneyM),2) moneyM,custom_id FROM
+            contract_table_m
+            GROUP BY custom_id
+            ) a,custom c WHERE c.name=a.code_auto AND c.code LIKE CONCAT('%',#{code},'%')
+
+        </if>
+    </select>
+
+    <delete id="delTableM">
+        DELETE FROM contract_table_m WHERE  uuid=#{uuid}
+    </delete>
+    <delete id="delTableMContractId">
+        DELETE FROM contract_table_m WHERE  contract_id=#{contractId}
+    </delete>
+    <insert id="insertTableM">
+        INSERT INTO  contract_table_m(uuid,code_auto,remark,dateM,moneyM,contentM,remarkM,pay1,pay2,pay3,pay4,custom_id,pay5,pay)
+        VALUES (#{uuid},#{codeAuto},#{remark},#{dateM},#{moneyM},#{contentM},#{remarkM},#{pay1},#{pay2},#{pay3},#{pay4},#{customId},#{pay5},#{pay})
+    </insert>
+    <insert id="insertTableMPay">
+        INSERT INTO  contract_table_m(uuid,code_auto,remark,dateM,moneyM,contract_id,pay,pay_out)
+        VALUES (#{uuid},#{codeAuto},#{remark},#{dateM},#{moneyM},#{contractId},#{pay},#{payOut})
+    </insert>
+    <update id="updateTableMPay">
+       UPDATE  contract_table_m
+       SET   code_auto= #{codeAuto},remark=#{remark},dateM=#{dateM},moneyM=#{moneyM},contract_id=#{contractId},pay=#{pay},pay_out=#{payOut}
+        WHERE  uuid=#{uuid}
+    </update>
+    <select id="gainTableMContractId" resultType="TableM">
+         SELECT * FROM contract_table_m WHERE  contract_id=#{contractId}
+    </select>
+    <update id="updateIsConfirm">
+        UPDATE contract SET is_confirm=#{isConfirm} WHERE code_auto=#{codeAuto} AND remark=#{remark}
+    </update>
+    <update id="updateIsConfirmId">
+        UPDATE contract SET is_confirm=#{isConfirm} WHERE custom_id=#{id}
+    </update>
+
+    <select id="gainTableMCustomId" resultType="String">
+        SELECT tableM FROM contract WHERE custom_id=#{customId}
+    </select>
+    <update id="updateTableMCustomId">
+        UPDATE contract SET tableM=#{tableM} WHERE custom_id=#{customId}
+    </update>
+
+    <!--is_confirm = 1 AND del = 0 OR  del=1 AND is_pay=1-->
+    <select id="gainContractFinishList" resultType="Contract">
+        SELECT * FROM contract WHERE is_ok=1 ORDER BY id DESC limit #{page},#{pageSize}
+    </select>
+    <select id="gainContractFinishListTotal" resultType="Integer">
+        SELECT count(id) FROM  (SELECT id FROM contract WHERE is_ok=1  ) a
+    </select>
+
+    <select id="gainContractFinishListQuery" resultType="Contract">
+        SELECT * FROM contract WHERE is_ok=1 AND is_pay=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        limit #{page},#{pageSize}
+    </select>
+    <select id="gainContractFinishListTotalQuery" resultType="Integer">
+        SELECT count(id) FROM (SELECT id FROM contract WHERE is_ok=1 AND is_pay=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        ) a
+    </select>
+
+    <update id="updatePay">
+        UPDATE contract SET del=1,is_ok=0, is_pay=#{isPay},is_free=#{isFree},free_reason=#{freeReason},other_in=#{otherIn},other_out=#{otherOut},reason=#{reason},pay_total=#{payTotal},is_over=#{isOver},pay_in=#{payIn},pay_out=#{payOut},contract_end=#{contractEnd},pay_free=#{payFree} WHERE  uuid=#{uuid}
+    </update>
+
+
+    <select id="gainContractPayList" resultType="Contract">
+        SELECT * FROM contract WHERE del=1 AND is_ok=1  ORDER BY  id DESC limit #{page},#{pageSize}
+    </select>
+    <select id="gainContractPayListTotal" resultType="Integer">
+        SELECT count(id) FROM contract WHERE del=1 AND is_ok=1
+    </select>
+
+    <select id="gainContractPayListQuery" resultType="Contract">
+        SELECT * FROM contract WHERE del=1 AND is_ok=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+        limit #{page},#{pageSize}
+    </select>
+    <select id="gainContractPayListTotalQuery" resultType="Integer">
+        SELECT count(id) FROM contract WHERE del=1 AND is_ok=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+    </select>
+
+    <update id="updatePayFinish">
+        UPDATE  contract SET is_finish=#{isFinish} WHERE id=#{id}
+    </update>
+    <update id="updateisWaterCustomId">
+         UPDATE  contract SET is_water=#{isWater} WHERE custom_id=#{customId}
+    </update>
+</mapper>

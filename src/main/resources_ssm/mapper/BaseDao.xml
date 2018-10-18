@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.seckill.dao.BaseDao">
+    <!--系统日志-->
+    <insert id="addLogs">
+        INSERT INTO  sys_logs(user_id,type) VALUES(#{id},#{type})
+    </insert>
+    <select id="querySysLogs" resultType="SysLogs">
+        SELECT s.id,s.type,u.name,u.account,d.name department_name,s.create_time FROM sys_logs s   LEFT JOIN users u ON u.id = s.user_id LEFT JOIN  department d ON  u.department_id = d.id WHERE   1=1   ORDER  BY s.create_time DESC  limit #{page},#{pageSize}
+    </select>
+
+    <select id="querySysLogsTotal" resultType="Integer">
+        SELECT count(s.id) c FROM sys_logs s   LEFT JOIN users u ON u.id = s.user_id LEFT JOIN  department d ON  u.department_id = d.id WHERE   1=1   ORDER  BY s.create_time DESC
+    </select>
+    <!--权限分配-->
+    <select id="queryRole1" resultType="Role1">
+        SELECT  id,name FROM  role1 ORDER BY no ASC
+    </select>
+    <select id="queryRole2" resultType="Role2">
+        SELECT  id,name,parent_id FROM  role2 WHERE  parent_id = #{parentId}
+    </select>
+    <select id="queryRole3" resultType="Role3">
+        SELECT  id,name,parent_id FROM  role3 WHERE  parent_id = #{parentId}
+    </select>
+    <select id="queryRole4" resultType="Role4">
+        SELECT  r.id,rt.type name,r.parent_id FROM  role4 r ,role_type rt WHERE  parent_id = #{parentId} and r.type_id = rt.id
+    </select>
+
+
+    <update id="insertRole">
+        UPDATE  users SET  role1=#{role1},role2=#{role2},role3=#{role3},role4=#{role4} WHERE  id = #{userId}
+    </update>
+    <select id="getRole" resultType="String">
+       <if test="filed=='role1'">
+           SELECT group_concat(r.name) from users u ,role1 r WHERE u.role1 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+       </if>
+        <if test="filed=='role2'">
+            SELECT group_concat(r.name) from users u ,role2 r WHERE u.role2 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+        <if test="filed=='role3'">
+            SELECT group_concat(r.name) from users u ,role3 r WHERE u.role3 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+        <if test="filed=='role4'">
+            SELECT group_concat(DISTINCT(r.name)) from users u ,role4 r WHERE u.role4 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+    </select>
+
+    <select id="getRoleId" resultType="String">
+        <if test="filed=='role1'">
+            SELECT group_concat(r.id) from users u ,role1 r WHERE u.role1 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+        <if test="filed=='role2'">
+            SELECT group_concat(r.id) from users u ,role2 r WHERE u.role2 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+        <if test="filed=='role3'">
+            SELECT group_concat(r.id) from users u ,role3 r WHERE u.role3 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+        <if test="filed=='role4'">
+            SELECT group_concat(r.id) from users u ,role4 r WHERE u.role4 LIKE CONCAT('%',r.id,'%') AND u.id=#{userId}  group by u.id
+
+        </if>
+    </select>
+    <!--系统管理员-->
+
+    <delete id="delSystem">
+        DELETE  FROM  users
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifySystem">
+        UPDATE users SET  name=#{name},pwd=#{pwd} WHERE  id = #{id}
+    </update>
+
+    <insert id="addSystem">
+        INSERT INTO  users(account,name,pwd,is_admin) VALUES (#{account},#{name},#{pwd},1)
+    </insert>
+
+    <select id="querySystem" resultType="Users">
+        SELECT id,account,name,pwd FROM  users WHERE is_admin=1 limit #{page},#{pageSize}
+    </select>
+    <select id="querySystemAll" resultType="Users">
+        SELECT id,account,name,pwd FROM  users
+    </select>
+    <select id="querySystemTotal" resultType="Integer">
+        SELECT count(id) count FROM  users WHERE  is_admin=1
+    </select>
+
+    <!--登录-->
+    <select id="login" resultType="Users">
+        SELECT u.id,u.account,u.name,u.pwd,u.forbid,u.is_admin FROM  users u  WHERE  account=#{account} AND pwd = #{pwd}
+    </select>
+
+    <!--部门管理-->
+    <delete id="delDepartment">
+       DELETE  FROM  department
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyDepartment">
+        UPDATE department SET  name=#{name} WHERE  id = #{id}
+    </update>
+
+    <insert id="addDepartment">
+        INSERT INTO  department(name,company) VALUES (#{name},#{company})
+    </insert>
+
+    <select id="queryDepartment" resultType="Department">
+        SELECT id,name FROM  department  limit #{page},#{pageSize}
+    </select>
+    <select id="queryDepartmentAll" resultType="Department">
+        SELECT id,name FROM  department
+    </select>
+    <select id="queryDepartmentTotal" resultType="Integer">
+        SELECT count(id) count FROM  department
+    </select>
+
+
+    <!--合同管理-->
+    <delete id="delContact">
+        DELETE  FROM  contact
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyContact">
+        UPDATE contact SET  name=#{name},sort=#{sort} WHERE  id = #{id}
+    </update>
+
+    <insert id="addContact">
+        INSERT INTO  contact(name,sort) VALUES (#{name},#{sort})
+    </insert>
+
+    <select id="queryContact" resultType="Contact">
+        SELECT id,name,sort FROM  contact  limit #{page},#{pageSize}
+    </select>
+    <select id="queryContactAll" resultType="Contact">
+        SELECT id,name,sort FROM  contact
+    </select>
+    <select id="queryContactTotal" resultType="Integer">
+        SELECT count(id) count FROM  contact
+    </select>
+
+    <!--车位管理-->
+    <delete id="delCar">
+        DELETE  FROM  car
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyCar">
+        UPDATE car SET  name=#{name} WHERE  id = #{id}
+    </update>
+
+    <insert id="addCar">
+        INSERT INTO  car(name) VALUES (#{name})
+    </insert>
+
+    <select id="queryCar" resultType="Car">
+        SELECT id,name FROM  car  limit #{page},#{pageSize}
+    </select>
+    <select id="queryCarAll" resultType="Car">
+        SELECT id,name FROM  car
+    </select>
+    <select id="queryCarTotal" resultType="Integer">
+        SELECT count(id) count FROM  car
+    </select>
+
+    <!--广告管理-->
+    <delete id="delAd">
+        DELETE  FROM  ad
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyAd">
+        UPDATE ad SET  name=#{name} WHERE  id = #{id}
+    </update>
+
+    <insert id="addAd">
+        INSERT INTO  ad(name) VALUES (#{name})
+    </insert>
+
+    <select id="queryAd" resultType="Ad">
+        SELECT id,name FROM  ad  limit #{page},#{pageSize}
+    </select>
+    <select id="queryAdAll" resultType="Ad">
+        SELECT id,name FROM  ad
+    </select>
+    <select id="queryAdTotal" resultType="Integer">
+        SELECT count(id) count FROM  ad
+    </select>
+
+    <!--商品名称-->
+    <delete id="delGoodsName">
+        DELETE  FROM  goods_name
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyGoodsName">
+        UPDATE goods_name SET  name=#{name} WHERE  id = #{id}
+    </update>
+
+    <insert id="addGoodsName">
+        INSERT INTO  goods_name(name) VALUES (#{name})
+    </insert>
+
+    <select id="queryGoodsName" resultType="GoodsName">
+        SELECT id,name FROM  goods_name  limit #{page},#{pageSize}
+    </select>
+    <select id="queryGoodsNameAll" resultType="GoodsName">
+        SELECT id,name FROM  goods_name
+    </select>
+    <select id="queryGoodsNameTotal" resultType="Integer">
+        SELECT count(id) count FROM  goods_name
+    </select>
+    <!--商品状态-->
+    <delete id="delGoodsStatus">
+        DELETE  FROM  goods_status
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyGoodsStatus">
+        UPDATE goods_status SET  name=#{name},status=#{status} WHERE  id = #{id}
+    </update>
+
+    <insert id="addGoodsStatus">
+        INSERT INTO  goods_status(name,status) VALUES (#{name},#{status})
+    </insert>
+
+    <select id="queryGoodsStatus" resultType="GoodsStatus">
+        SELECT id,name,status FROM  goods_status  limit #{page},#{pageSize}
+    </select>
+    <select id="queryGoodsStatusAll" resultType="GoodsStatus">
+        SELECT id,name,status FROM  goods_status
+    </select>
+    <select id="queryGoodsStatusTotal" resultType="Integer">
+        SELECT count(id) count FROM  goods_status
+    </select>
+
+    <!--用户管理-->
+    <delete id="delUser">
+        DELETE  FROM  users
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyUser">
+        UPDATE users SET account=#{account},name=#{name},pwd=#{pwd},department_id=#{departmentId} WHERE  id = #{id}
+    </update>
+
+    <insert id="addUser">
+        INSERT INTO  users(account,name,pwd,department_id) VALUES (#{account},#{name},#{pwd},#{departmentId})
+    </insert>
+
+    <select id="queryUser" resultType="Users">
+        SELECT u.id,u.account,u.name,u.pwd,u.department_id,d.name department_name,u.forbid FROM  users u ,department d WHERE  u.department_id = d.id limit #{page},#{pageSize}
+    </select>
+
+    <select id="queryUserTotal" resultType="Integer">
+        SELECT count(id) count FROM  users WHERE  is_admin=0
+    </select>
+
+    <select id="repeatUser" resultType="Integer">
+        SELECT count(id) count FROM  users where account = #{account}
+    </select>
+    <!--0 禁用  1 可以用-->
+    <update id="forbidAccount">
+        UPDATE  users SET  forbid=0 WHERE  id = #{id}
+    </update>
+    <update id="unForbidAccount">
+        UPDATE  users SET  forbid=1 WHERE  id = #{id}
+    </update>
+
+    <!--费用管理-->
+    <delete id="delFree">
+        DELETE  FROM  free
+        WHERE  id = #{id}
+
+    </delete>
+    <update id="modifyFree">
+        UPDATE free SET  name=#{name},price=#{price},unit=#{unit} WHERE  id = #{id}
+    </update>
+
+    <insert id="addFree">
+        INSERT INTO  free(name,price,unit) VALUES (#{name},#{price},#{unit})
+    </insert>
+
+    <select id="queryFree" resultType="Free">
+        SELECT id,name,price,unit FROM  free  limit #{page},#{pageSize}
+    </select>
+    <select id="queryFreeAll" resultType="Free">
+        SELECT id,name,price,unit FROM  free
+    </select>
+    <select id="queryFreeTotal" resultType="Integer">
+        SELECT count(id) count FROM  free
+    </select>
+
+</mapper>

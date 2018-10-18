@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.seckill.dao.StorageDao">
+
+
+    <select id="gainRentCustom" resultType="Integer">
+        SELECT  count(id) FROM contract WHERE custom_id = #{id} AND   NOW()>= start_date AND NOW() <![CDATA[<=]]>  end_date AND del=0
+    </select>
+    <select id="gainRentCustomNum" resultType="Integer">
+        SELECT  count(id) FROM contract WHERE custom_id = #{id}  AND del=0
+    </select>
+    <select id="gainGoodsName" resultType="GoodsName">
+        SELECT id,name FROM goods_name
+    </select>
+    <select id="gainGoodsStatus" resultType="GoodsStatus">
+        SELECT id,name,status FROM goods_status
+    </select>
+
+    <select id="gainAd" resultType="Ad">
+        SELECT id,name FROM ad
+    </select>
+
+    <select id="gainCar" resultType="Car">
+        SELECT id,name FROM car
+    </select>
+
+
+    <insert id="addHouse">
+        INSERT  INTO  house( user_id, goods_name_id, location
+    , use_area, build_area, num, link_house, unit
+    , cash,water_no,power_no,air_no, start_time, end_time,  modify_time
+    , goods_status_id,floor,is_window,remark,chart_loc) VALUES (#{userId}, #{goodsNameId}, #{location}
+    ,#{ useArea},#{ buildArea}, #{num}, #{linkHouse},#{ unit}
+    ,#{ cash},#{ waterNo},#{ powerNo},#{ airNo}, #{startTime}, #{endTime},#{ modifyTime}
+    ,#{ goodsStatusId},#{floor},#{isWindow},#{remark},#{chartLoc})
+    </insert>
+    <select id="gainOneHouse" resultType="House">
+        SELECT  * FROM house WHERE  id=#{id}
+    </select>
+    <insert id="addHouseAd">
+        INSERT  INTO  house( user_id, goods_name_id, location
+        , use_area,  num,start_time, end_time,  modify_time
+        , goods_status_id,floor,ad_id,chart_loc) VALUES (#{userId}, #{goodsNameId}, #{location}
+        ,#{ useArea}, #{num},  #{startTime}, #{endTime},#{ modifyTime}
+        ,#{ goodsStatusId},#{floor},#{adType},#{chartLoc})
+    </insert>
+    <insert id="addHouseCar">
+        INSERT  INTO  house( user_id, goods_name_id, location
+        , use_area,  num,start_time, end_time,  modify_time
+        , goods_status_id,floor,car_id,chart_loc) VALUES (#{userId}, #{goodsNameId}, #{location}
+        ,#{ useArea}, #{num},  #{startTime}, #{endTime},#{ modifyTime}
+        ,#{ goodsStatusId},#{floor},#{carType},#{chartLoc})
+    </insert>
+    <update id="modifyHouse">
+       UPDATE  house SET   user_id=#{userId}, goods_name_id = #{goodsNameId}, location= #{location}
+        , use_area=#{ useArea}, build_area=#{ buildArea}, num=#{num}, link_house=#{linkHouse}, unit=#{ unit}
+        , cash=#{ cash},water_no=#{ waterNo},power_no=#{ powerNo},air_no=#{ airNo}, start_time=#{startTime}
+        , end_time=#{endTime},  modify_time= #{ modifyTime}, goods_status_id=#{ goodsStatusId},floor=#{floor},is_window=#{isWindow},remark=#{remark},chart_loc=#{chartLoc}
+         WHERE  id= #{id}
+    </update>
+
+    <update id="updateCustomIdByUuid">
+        UPDATE custom SET  id =#{id} WHERE uuid=#{uuid}
+    </update>
+
+    <select id="gainHistoryHouse" resultType="Custom">
+       SELECT * FROM custom WHERE id IN (SELECT custom_id FROM contract c,table1 t WHERE t.uuid=c.uuid AND t.loc=#{loc})
+   </select>
+    <select id="gainHistoryContract" resultType="Contract">
+        SELECT * FROM contract c,table1 t WHERE t.uuid=c.uuid AND t.loc=#{loc}
+    </select>
+    <update id="modifyHouseAd">
+        UPDATE  house SET   user_id=#{userId}, goods_name_id = #{goodsNameId}, location= #{location}
+        , use_area=#{ useArea},  num=#{num},  start_time=#{startTime}
+        , end_time=#{endTime},  modify_time= #{ modifyTime}, goods_status_id=#{ goodsStatusId},floor=#{floor},ad_id=#{adType},chart_loc=#{chartLoc}
+        WHERE  id= #{id}
+    </update>
+
+    <update id="modifyHouseCar">
+        UPDATE  house SET   user_id=#{userId}, goods_name_id = #{goodsNameId}, location= #{location}
+        , use_area=#{ useArea},  num=#{num},  start_time=#{startTime}
+        , end_time=#{endTime},  modify_time= #{ modifyTime}, goods_status_id=#{ goodsStatusId},floor=#{floor},car_id=#{carType},chart_loc=#{chartLoc}
+        WHERE  id= #{id}
+    </update>
+
+    <select id="totalNum" resultType="Integer">
+        SELECT IFNULL(sum(num),0) FROM (SELECT num
+
+        FROM house h ,goods_name gn
+        <if test="type==1">
+            ,ad a
+        </if>
+        <if test="type==2">
+            ,car c
+        </if>
+        WHERE h.goods_name_id = gn.id
+        <if test="type==0">
+            AND ad_id is NULL
+            AND car_id is NULL
+
+        </if>
+        <if test="type==1">
+            AND build_area is NULL
+            AND car_id is NULL
+            AND a.id = h.ad_id
+        </if>
+
+        <if test="type==2">
+            AND ad_id is NULL
+            AND build_area is NULL
+            AND c.id = h.car_id
+        </if>
+
+        ORDER BY h.id DESC
+        limit #{page},#{pageSize}) a
+    </select>
+
+    <select id="gainHouse" resultType="House">
+        SELECT h.id,user_id, goods_name_id, location
+        , use_area, build_area, num, link_house, unit
+        , cash,water_no,power_no,air_no, start_time, end_time, modify_time
+        , goods_status_id,gn.name goodsName,floor,is_window,gs.name goods_status_name,gs.status goods_status,chart_loc
+        <if test="type==1">
+            ,a.name ad_name
+        </if>
+        <if test="type==2">
+            ,c.name car_name
+        </if>
+        FROM house h ,goods_name gn, goods_status gs
+        <if test="type==1">
+            ,ad a
+        </if>
+        <if test="type==2">
+            ,car c
+        </if>
+
+
+        WHERE h.goods_name_id = gn.id AND gs.id=h.goods_status_id
+        <if test="type==0">
+            AND ad_id is NULL
+            AND car_id is NULL
+
+        </if>
+        <if test="type==1">
+            AND build_area is NULL
+            AND car_id is NULL
+            AND a.id = h.ad_id
+        </if>
+
+        <if test="type==2">
+            AND ad_id is NULL
+            AND build_area is NULL
+            AND c.id = h.car_id
+        </if>
+
+
+        ORDER BY h.id DESC limit #{page},#{pageSize}
+    </select>
+    <select id="gainHouseTotal" resultType="Integer">
+        SELECT count(id) c FROM house
+        WHERE 1=1
+        <if test="type==0">
+            AND ad_id is NULL
+            AND car_id is NULL
+        </if>
+        <if test="type==1">
+            AND build_area is NULL
+            AND car_id is NULL
+        </if>
+
+        <if test="type==2">
+            AND ad_id is NULL
+            AND build_area is NULL
+        </if>
+    </select>
+    <delete id="delHouse">
+
+        DELETE  FROM house WHERE  id = #{id}
+    </delete>
+
+    <select id="gainHouseQueryNum" resultType="Integer">
+        SELECT IFNULL(sum(num),0) FROM (SELECT num FROM house h ,goods_name gn,goods_status gs
+        <if test="type==1">
+            ,ad a
+        </if>
+        <if test="type==2">
+            ,car c
+        </if>
+        WHERE h.goods_name_id = gn.id AND h.goods_status_id=gs.id
+
+
+        <if test="type==0">
+            AND #{isWindow} LIKE CONCAT('%',h.is_window,'%')
+        </if>
+
+        <if test="type==1">
+            AND #{adTypeIn} LIKE CONCAT('%',h.ad_id,'%')
+            AND a.id = h.ad_id
+
+        </if>
+        <if test="type==2">
+            AND #{carTypeIn} LIKE CONCAT('%',h.car_id,'%')
+            AND c.id = h.car_id
+
+        </if>
+        <if test="goodsNameId!=992961234">
+            AND h.goods_name_id = #{goodsNameId}
+        </if>
+        <if test="location!='992961234'">
+            AND CONCAT(h.location,h.link_house) LIKE CONCAT('%',#{location},'%')
+        </if>
+
+
+        AND #{goodsStatusId} LIKE CONCAT('%',h.goods_status_id,'%')
+
+
+        <if test="floor!=992961234">
+            AND h.floor = #{floor}
+        </if>
+
+        <if test="startTime!='992961234'">
+            AND h.start_time >= #{startTime}
+        </if>
+        <if test="endTime!='992961234'">
+            AND h.end_time &lt;= #{endTime}
+        </if>
+
+        <if test="startArea!='992961234'">
+            AND h.use_area >= #{startArea}
+        </if>
+        <if test="endArea!='992961234'">
+            AND h.use_area &lt;= #{endArea}
+        </if>
+
+        ORDER BY h.id DESC
+
+        limit #{page},#{pageSize}) a
+    </select>
+
+    <select id="gainHouseQuery" resultType="House">
+        SELECT h.id,user_id, goods_name_id, location
+        , use_area, build_area, num, link_house, unit
+        , cash,water_no,power_no,air_no, start_time, end_time, modify_time
+        , goods_status_id,gn.name goodsName,floor,ad_id,car_id,gs.name goods_status_name,gn.name goods_name,h.chart_loc
+        <if test="type==1">
+            ,a.name ad_name
+        </if>
+        <if test="type==2">
+            ,c.name car_name
+        </if>
+        FROM house h ,goods_name gn,goods_status gs
+
+        <if test="type==1">
+            ,ad a
+        </if>
+        <if test="type==2">
+            ,car c
+        </if>
+
+        WHERE h.goods_name_id = gn.id AND h.goods_status_id=gs.id
+
+
+        <if test="type==0">
+            AND #{isWindow} LIKE CONCAT('%',h.is_window,'%')
+        </if>
+
+        <if test="type==1">
+            AND #{adTypeIn} LIKE CONCAT('%',h.ad_id,'%')
+            AND a.id = h.ad_id
+
+        </if>
+        <if test="type==2">
+            AND #{carTypeIn} LIKE CONCAT('%',h.car_id,'%')
+            AND c.id = h.car_id
+
+        </if>
+        <if test="goodsNameId!=992961234">
+            AND h.goods_name_id = #{goodsNameId}
+        </if>
+        <if test="location!='992961234'">
+            AND CONCAT(h.location,h.link_house) LIKE CONCAT('%',#{location},'%')
+        </if>
+
+
+        AND #{goodsStatusId} LIKE CONCAT('%',h.goods_status_id,'%')
+
+
+        <if test="floor!=992961234">
+            AND h.floor = #{floor}
+        </if>
+
+        <if test="startTime!='992961234'">
+            AND h.start_time >= #{startTime}
+        </if>
+        <if test="endTime!='992961234'">
+            AND h.end_time &lt;= #{endTime}
+        </if>
+
+        <if test="startArea!='992961234'">
+            AND h.use_area >= #{startArea}
+        </if>
+        <if test="endArea!='992961234'">
+            AND h.use_area &lt;= #{endArea}
+        </if>
+
+        ORDER BY h.id DESC
+
+        limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainHouseQueryTotal" resultType="Integer">
+        SELECT count(h.id) c FROM house h ,goods_name gn
+        WHERE h.goods_name_id = gn.id
+
+        <if test="type==0">
+            AND #{isWindow} LIKE CONCAT('%',h.is_window,'%')
+        </if>
+        <if test="type==1">
+            AND #{adTypeIn} LIKE CONCAT('%',h.ad_id,'%')
+        </if>
+        <if test="type==2">
+            AND #{carTypeIn} LIKE CONCAT('%',h.car_id,'%')
+        </if>
+        <if test="goodsNameId!=992961234">
+            AND h.goods_name_id = #{goodsNameId}
+        </if>
+        <if test="location!='992961234'">
+            AND CONCAT(h.location,h.link_house) LIKE CONCAT('%',#{location},'%')
+        </if>
+        AND #{goodsStatusId} LIKE CONCAT('%',h.goods_status_id,'%')
+
+        <if test="floor!=992961234">
+            AND h.floor = #{floor}
+        </if>
+
+        <if test="startTime!='992961234'">
+            AND h.start_time >= #{startTime}
+        </if>
+        <if test="endTime!='992961234'">
+            AND h.end_time &lt;= #{endTime}
+        </if>
+
+        <if test="startArea!='992961234'">
+            AND h.use_area >= #{startArea}
+        </if>
+        <if test="endArea!='992961234'">
+            AND h.use_area &lt;= #{endArea}
+        </if>
+
+
+    </select>
+    <!-- 客户管理-->
+    <insert id="addWorker">
+        INSERT INTO worker(name,phone,duty,link,uuid) VALUES (#{name},#{phone},#{duty},#{link},#{uuid})
+    </insert>
+    <insert id="addCompany">
+        INSERT INTO  company(name,no,uuid) VALUES (#{name},#{no},#{uuid})
+    </insert>
+    <insert id="addCarReg">
+        INSERT INTO  car_reg(name,phone,no,uuid) VALUES (#{name},#{phone},#{no},#{uuid})
+    </insert>
+    <insert id="addBad">
+        INSERT INTO  bad(date,place,content,uuid) VALUES (#{date},#{place},#{content},#{uuid})
+    </insert>
+    <insert id="addCustom">
+        INSERT INTO  custom(name,remark,code,uuid,register_info) VALUES (#{name},#{remark},#{code},#{uuid},#{registerInfo})
+    </insert>
+    <update id="updateCustom">
+        UPDATE custom SET name=#{name},remark=#{remark},code=#{code} WHERE uuid = #{uuid}
+    </update>
+    <delete id="delWorker">
+        DELETE FROM  worker WHERE  uuid=#{uuid};
+    </delete>
+    <delete id="delCompany">
+        DELETE FROM  company WHERE  uuid=#{uuid};
+    </delete>
+    <delete id="delCarReg">
+        DELETE FROM  car_reg WHERE  uuid=#{uuid};
+    </delete>
+    <delete id="delBad">
+        DELETE FROM  bad WHERE  uuid=#{uuid};
+    </delete>
+
+    <delete id="delCustom">
+        DELETE FROM  custom WHERE  uuid=#{uuid}
+    </delete>
+
+    <select id="gainWorker" resultType="Worker">
+        SELECT  * FROM worker WHERE uuid = #{uuid}
+    </select>
+
+
+    <select id="gainCompany" resultType="Company">
+     SELECT  * FROM  company WHERE  uuid=#{uuid}
+    </select>
+
+
+    <select id="gainCarReg" resultType="CarReg">
+    SELECT  * FROM  car_reg WHERE  uuid = #{uuid}
+    </select>
+
+
+    <select id="gainBad" resultType="Bad">
+    SELECT  * FROM  bad WHERE  uuid = #{uuid}
+    </select>
+
+
+    <select id="gainCustom" resultType="Custom">
+         SELECT  id,name,no,remark,code,uuid FROM custom    ORDER BY  id DESC  limit #{page},#{pageSize}
+    </select>
+
+    <select id="gainCustomTotal" resultType="Integer">
+            SELECT  count(id) c FROM  custom
+    </select>
+
+
+    <select id="gainCustomOne" resultType="Custom">
+        SELECT  * FROM custom  WHERE uuid=#{uuid}
+    </select>
+
+    <select id="gainCustomNameList" resultType="Custom">
+        SELECT  * FROM custom  WHERE name=#{name}
+    </select>
+
+    <select id="gainCustomName" resultType="Custom">
+        SELECT  count(id) c,id,name,no,remark,code,uuid FROM custom  WHERE name=#{name}   GROUP BY name
+    </select>
+
+    <delete id="delCustomByName">
+        DELETE  FROM  custom WHERE  name = #{name}
+    </delete>
+
+    <select id="gainCustomQuery" resultType="Custom">
+        <if test="code!='' and linkMan==''">
+            SELECT c.id,c.name,c.no,c.remark,c.code,c.uuid FROM custom c WHERE code like CONCAT('%', #{code},
+            '%') ORDER BY c.id DESC limit #{page},#{pageSize}
+        </if>
+        <if test="code=='' and linkMan!=''">
+            SELECT c.id,c.name,c.no,c.remark,c.code,c.uuid FROM worker w ,custom c WHERE c.uuid = w.uuid
+            and w.name like CONCAT('%', #{linkMan}, '%')
+            ORDER BY c.id DESC limit #{page},#{pageSize}
+        </if>
+        <if test="code!='' and linkMan!=''">
+            SELECT c.id,c.name,c.no,c.remark,c.code,c.uuid FROM worker w ,custom c WHERE c.uuid = w.uuid
+            and w.name like CONCAT('%', #{linkMan}, '%')
+            AND c.`code` LIKE CONCAT('%', #{code}, '%')
+            ORDER BY c.id DESC limit #{page},#{pageSize}
+        </if>
+
+
+    </select>
+
+
+    <select id="gainCustomQueryTotal" resultType="Integer">
+        <if test="code!='' and linkMan==''">
+            SELECT count(id) c FROM custom WHERE code like CONCAT('%', #{code}, '%')
+        </if>
+        <if test="code=='' and linkMan!=''">
+            SELECT count(c.id) c FROM worker w ,custom c WHERE c.uuid = w.uuid
+            and w.name like CONCAT('%', #{linkMan}, '%')
+        </if>
+        <if test="code!='' and linkMan!=''">
+            SELECT count(c.id) c FROM worker w ,custom c WHERE c.uuid = w.uuid
+            and w.name like CONCAT('%', #{linkMan}, '%')
+            AND c.`code` LIKE CONCAT('%', #{code}, '%')
+        </if>
+
+
+    </select>
+
+
+    <select id="gainCustomByCode" resultType="Custom">
+          SELECT  * FROM custom c  WHERE  code like CONCAT('%', #{code}, '%')
+    </select>
+
+    <select id="gainStatus" resultType="Contract">
+        SELECT * FROM contract WHERE style=#{style} AND table1 LIKE CONCAT('%',#{loc},'%') AND is_confirm=0 AND del = 0
+    </select>
+
+
+    <insert id="insertFreeExport">
+        INSERT INTO free_export(loc,no,date,degree,type,source,create_time,contract_degree,contract_uuid)
+         VALUES (#{loc},#{no},#{date},#{degree},#{type},#{source},#{createTime},#{contractDegree},#{contractUuid})
+    </insert>
+    <update id="updateFreeExport">
+        UPDATE free_export SET  no=#{no},degree=#{degree},type=#{type},source=#{source},create_time=#{createTime},contract_degree=#{contractDegree} WHERE contract_uuid=#{contractUuid}
+    </update>
+    <select id="gainFreeExport" resultType="FreeExport">
+       SELECT  * FROM  free_export WHERE  type=#{type} AND degree!='' limit #{page},#{pageSize}
+   </select>
+    <select id="gainFreeExportTotal" resultType="Integer">
+        SELECT  count(*) c FROM  free_export WHERE  type=#{type} AND degree!=''
+    </select>
+
+    <select id="gainFreeExportBy" resultType="FreeExport">
+        SELECT * FROM free_export WHERE  loc=#{loc} AND  type=#{type} AND degree!='' ORDER  BY date DESC,id DESC
+    </select>
+     <select id="gainFreeExportDateAndLoc" resultType="FreeExport">
+          SELECT max(date) date,loc,type,id FROM free_export  WHERE type=#{type} AND is_ok= 0  AND degree!=''  GROUP BY loc ORDER BY id desc limit #{page},#{pageSize}
+     </select>
+    <select id="gainFreeExportDateAndLocTotal" resultType="Integer">
+        SELECT  count(*) FROM (SELECT max(date) date,loc,type,id FROM free_export  WHERE type=#{type} AND is_ok= 0  AND degree!=''  GROUP BY loc ORDER BY id desc) a
+    </select>
+    <select id="gainFreeExportByDateAndLoc" resultType="FreeExport">
+        SELECT * FROM free_export WHERE  date=#{date} AND loc=#{loc} AND type=#{type} AND degree!='' ORDER  BY  id DESC  limit 1
+    </select>
+    <delete id="delFreeExport">
+        DELETE  FROM free_export WHERE id=#{id}
+    </delete>
+
+    <select id="gainFreeExportGroup" resultType="FreeExport">
+        SELECT  id,no,loc,type,date,degree,source,create_time,COUNT(create_time) count FROM free_export WHERE type=#{type}  AND degree!=''GROUP BY create_time ORDER BY create_time DESC
+    </select>
+
+    <select id="gainCustomById" resultType="Custom">
+        SELECT  * FROM custom  WHERE id=#{id}
+    </select>
+    <update id="updateFreeExportDateAndDegree">
+        UPDATE free_export SET date=#{date},degree=#{degree} WHERE id=#{id}
+    </update>
+
+</mapper>
