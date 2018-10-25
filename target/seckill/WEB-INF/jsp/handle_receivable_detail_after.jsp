@@ -175,7 +175,7 @@
 
 
         <%--<h4>--%>
-            <%--<center>收款(预收)汇总表</center>--%>
+        <%--<center>收款(预收)汇总表</center>--%>
         <%--</h4>--%>
         <div style="display:none;" class="panel panel-default    col-sm-12 ">
             <div class="panel-body">
@@ -268,7 +268,7 @@
 
         </div>
 
-        <div   class="panel panel-default    col-sm-12 ">
+        <div class="panel panel-default    col-sm-12 ">
             <div class="panel-body">
                 <div class="form-group">
                     <div class="table-responsive col-md-10 col-md-offset-1" style="clear: both;margin-top: 30px">
@@ -288,6 +288,42 @@
                             </tr>
                             </thead>
                             <tbody id="shoppingTb">
+                            <c:forEach items="${contractFreeList}" var="list">
+                                <tr>
+                                    <td>  <input
+                                        <%--<c:if test="${fn:contains(tableU, list.id+pLoop.index+loop.index+ad.loc)}"> checked="checked" </c:if>--%>
+                                                 onclick="selectMoney(this)"
+                                                 style="width: 20px;height: 20px;"  checked disabled
+                                                 type="checkbox"/>
+
+                                    </td>
+                                    <td colspan="2"><input disabled="disabled"
+                                                           style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                           id="uId " type="text" value="${list.name}"
+                                                           name="useArea1"/></td>
+                                        <%--<td><input disabled="disabled"--%>
+                                        <%--style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"--%>
+                                        <%--id="uId " type="text" value="${ad.loc}" name="useArea1"/></td>--%>
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="${list.no}" name="useArea1"/></td>
+
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="${list.money}" name="useArea1"/>
+
+                                    </td>
+
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="" name="useArea1"/></td>
+
+                                    <td style="display: none"><input disabled="disabled"
+                                                                     style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                                     id="uId " type="text" value=""
+                                                                     name="useArea1"/></td>
+                                </tr>
+                            </c:forEach>
                             <c:forEach items="${contractList}" var="list" varStatus="pLoop">
 
                                 <%--table1 = id1 + flag2 + loc1 + flag2 + time1 + flag2 + useArea1 + flag2 + cash1 + flag2 + money1 + flag2 + price1;--%>
@@ -348,7 +384,6 @@
 
             </div>
         </div>
-
 
 
     </form>
@@ -1579,7 +1614,7 @@
 
                 for (var i = 0; i < tableUs.length; i++) {
                     if (tableUs[i].indexOf(item.id) != -1 && tableUs[i].indexOf('fantasy') != -1) {
-                       // $(this).attr('disabled', 'disabled');
+                        // $(this).attr('disabled', 'disabled');
                         break;
                     }
                 }

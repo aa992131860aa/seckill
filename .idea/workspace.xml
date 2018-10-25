@@ -9,7 +9,48 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java" line="256" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdd4392c-061d-48ed-8980-ce72932c437c" name="Default" comment="" />
+    <list default="true" id="cdd4392c-061d-48ed-8980-ce72932c437c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/entity/ContractFree.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login_ts.jsp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/web/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/web/IndexController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml" afterPath="$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml" afterPath="$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/desk.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/desk.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_all.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_all.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ContractDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ContractDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HandleDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/HandleDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/dao/HandleDao.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/dao/HandleDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/service/HandleService.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/service/HandleService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/service/impl/HandleServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/service/impl/HandleServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/web/ContractController.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/web/ContractController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/web/HandleController.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/web/HandleController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/seckill/web/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/web/IndexController.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/ContractDao.xml" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/ContractDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/HandleDao.xml" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/HandleDao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dao/HandleDao.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dao/HandleDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/HandleService.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/HandleService.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/impl/HandleServiceImpl.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/impl/HandleServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/ContractController.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/ContractController.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/HandleController.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/HandleController.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/IndexController.class" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/web/IndexController.class" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/desk.jsp" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/desk.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable.jsp" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_all.jsp" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_all.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_detail.jsp" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_detail.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_detail_after.jsp" afterPath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/handle_receivable_detail_after.jsp" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +78,8 @@
       <file leaf-file-name="HandleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90651">
-              <caret line="2830" column="34" lean-forward="false" selection-start-line="2830" selection-start-column="34" selection-end-line="2830" selection-end-column="34" />
+            <state relative-caret-position="264">
+              <caret line="440" column="24" lean-forward="true" selection-start-line="440" selection-start-column="24" selection-end-line="440" selection-end-column="24" />
               <folding>
                 <element signature="method#handleReceivablePay#0;class#HandleController#0" expanded="false" />
                 <element signature="method#handleReceivablePayQuery#0;class#HandleController#0" expanded="false" />
@@ -47,79 +88,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContractDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml">
+      <file leaf-file-name="StorageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12804">
-              <caret line="388" column="11" lean-forward="false" selection-start-line="388" selection-start-column="11" selection-end-line="388" selection-end-column="11" />
+            <state relative-caret-position="595">
+              <caret line="1588" column="0" lean-forward="false" selection-start-line="1588" selection-start-column="0" selection-end-line="1588" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handle_receivable_detail_after.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11616">
+              <caret line="352" column="36" lean-forward="false" selection-start-line="352" selection-start-column="36" selection-end-line="352" selection-end-column="36" />
               <folding>
-                <marker date="1539840328605" expanded="true" signature="268:286" ph="SELECT * FRO... free" />
-                <marker date="1539840328605" expanded="true" signature="368:395" ph="SELECT * FRO... goods_status" />
-                <marker date="1539840328605" expanded="true" signature="469:492" ph="SELECT * FRO... contact" />
-                <marker date="1539840328605" expanded="true" signature="563:883" ph="SELECT * FRO... house" />
-                <marker date="1539840328605" expanded="true" signature="953:1166" ph="SELECT * FRO... house" />
-                <marker date="1539840328605" expanded="true" signature="1227:1365" ph="UPDATE car_reg... " />
-                <marker date="1539840328605" expanded="true" signature="1434:1778" ph="SELECT * FRO... house" />
-                <marker date="1539840328605" expanded="true" signature="1859:1951" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="2036:2091" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="2174:2256" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="2344:2392" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="2480:2581" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="2673:2738" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="2825:2908" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="2999:3047" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="3099:3225" ph="UPDATE contract " />
-                <marker date="1539840328605" expanded="true" signature="3301:3346" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="3404:4050" ph="INSERT INTO contract" />
-                <marker date="1539840328605" expanded="true" signature="4107:4723" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="4774:4822" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="4880:5346" ph="INSERT INTO contract" />
-                <marker date="1539840328605" expanded="true" signature="5406:5845" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="5905:6371" ph="INSERT INTO contract" />
-                <marker date="1539840328605" expanded="true" signature="6432:6871" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="6945:7057" ph="SELECT ifnul... contract" />
-                <marker date="1539840328605" expanded="true" signature="7127:7792" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="7865:8512" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="8585:9250" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="9326:9965" ph="SELECT count... contract" />
-                <marker date="1539840328605" expanded="true" signature="10011:10054" ph="DELETE FROM contract" />
-                <marker date="1539840328605" expanded="true" signature="10132:10175" ph="SELECT sort contact" />
-                <marker date="1539840328605" expanded="true" signature="10269:10341" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="10420:10568" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="10651:10788" ph="SELECT count... " />
-                <marker date="1539840328605" expanded="true" signature="10845:11101" ph="INSERT INTO table3388" />
-                <marker date="1539840328605" expanded="true" signature="11157:11320" ph="INSERT INTO table77" />
-                <marker date="1539840328605" expanded="true" signature="11385:11444" ph="UPDATE table77... " />
-                <marker date="1539840328605" expanded="true" signature="11495:11538" ph="DELETE FROM table3388... " />
-                <marker date="1539840328605" expanded="true" signature="11591:11632" ph="DELETE FROM table77... " />
-                <marker date="1539840328605" expanded="true" signature="11711:11820" ph="SELECT * FRO... free_export" />
-                <marker date="1539840328605" expanded="true" signature="11893:12030" ph="SELECT start... table77" />
-                <marker date="1539840328605" expanded="true" signature="12083:12156" ph="UPDATE house... " />
-                <marker date="1539840328605" expanded="true" signature="12210:12306" ph="INSERT INTO table1" />
-                <marker date="1539840328605" expanded="true" signature="12358:12398" ph="DELETE FROM table1... " />
-                <marker date="1539840328605" expanded="true" signature="12479:13058" ph="SELECT * FRO... *" />
-                <marker date="1539840328605" expanded="true" signature="12496:12732" ph="SELECT c.*,'... contract" />
-                <marker date="1539840328605" expanded="true" signature="12759:13029" ph="SELECT c.*,'... contract" />
-                <marker date="1539840328605" expanded="true" signature="13144:13704" ph="SELECT count... *" />
-                <marker date="1539840328605" expanded="true" signature="13168:13404" ph="SELECT c.*,'... contract" />
-                <marker date="1539840328605" expanded="true" signature="13431:13701" ph="SELECT c.*,'... contract" />
-                <marker date="1539840328605" expanded="true" signature="13795:13878" ph="SELECT count... free_export" />
-                <marker date="1539840328605" expanded="true" signature="13935:14338" ph="UPDATE house... " />
-                <marker date="1539840328605" expanded="true" signature="13992:14337" ph="SELECT locat... location" />
-                <marker date="1539840328605" expanded="true" signature="14015:14330" ph="SELECT DISTI... contract" />
-                <marker date="1539840328605" expanded="true" signature="14395:14572" ph="UPDATE house... " />
-                <marker date="1539840328605" expanded="true" signature="14455:14571" ph="SELECT locat... location" />
-                <marker date="1539840328605" expanded="true" signature="14477:14568" ph="SELECT h.loc... house" />
-                <marker date="1539840328605" expanded="true" signature="14630:14952" ph="UPDATE house... " />
-                <marker date="1539840328605" expanded="true" signature="14687:14951" ph="SELECT locat... location" />
-                <marker date="1539840328605" expanded="true" signature="14709:14948" ph="SELECT h.loc... house" />
-                <marker date="1539840328605" expanded="true" signature="15027:15408" ph="SELECT * FRO... contract" />
-                <marker date="1539840328605" expanded="true" signature="15959:16428" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="16290:16427" ph="SELECT uuid uuid" />
-                <marker date="1539840328605" expanded="true" signature="16308:16424" ph="SELECT uuid contract" />
-                <marker date="1539840328605" expanded="true" signature="16492:16816" ph="UPDATE contract... " />
-                <marker date="1539840328605" expanded="true" signature="16888:16959" ph="UPDATE free_export " />
+                <marker date="1540372817069" expanded="true" signature="85642:85757" ph="..." />
+                <marker date="1540372817069" expanded="true" signature="85891:86005" ph="..." />
+                <marker date="1540372817069" expanded="true" signature="86135:86249" ph="..." />
+                <marker date="1540372817069" expanded="true" signature="86350:86464" ph="..." />
+                <marker date="1540372817069" expanded="true" signature="86583:86697" ph="..." />
+                <marker date="1540372817069" expanded="true" signature="86814:86928" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_ts.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login_ts.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3531">
+              <caret line="107" column="39" lean-forward="false" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="desk.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/desk.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="178" column="23" lean-forward="false" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6303">
+              <caret line="206" column="19" lean-forward="false" selection-start-line="206" selection-start-column="19" selection-end-line="206" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,161 +148,79 @@
       <file leaf-file-name="ContractController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5577">
-              <caret line="193" column="63" lean-forward="false" selection-start-line="193" selection-start-column="63" selection-end-line="193" selection-end-column="63" />
+            <state relative-caret-position="-65">
+              <caret line="2938" column="72" lean-forward="false" selection-start-line="2938" selection-start-column="72" selection-end-line="2938" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContractDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/dao/ContractDao.java">
+      <file leaf-file-name="InteractController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4620">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="934" column="53" lean-forward="false" selection-start-line="934" selection-start-column="53" selection-end-line="934" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="money_water.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/money_water.jsp">
+      <file leaf-file-name="HandleDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4884">
-              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contract_house_add.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_add.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="2156" column="33" lean-forward="true" selection-start-line="2156" selection-start-column="33" selection-end-line="2156" selection-end-column="33" />
+            <state relative-caret-position="11385">
+              <caret line="345" column="86" lean-forward="false" selection-start-line="345" selection-start-column="86" selection-end-line="345" selection-end-column="86" />
               <folding>
-                <element signature="e#28056#28063#0#HTML" expanded="true" />
-                <element signature="e#50948#50955#0#HTML" expanded="true" />
-                <marker date="1539843369777" expanded="true" signature="94137:94169" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="94567:94638" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="94738:94765" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="94823:94836" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="94932:95047" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="95196:95310" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="95422:95536" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="95926:95940" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="97175:97290" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="97444:97558" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="97700:97814" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="97930:98044" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="98165:98279" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="98402:98516" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99082:99153" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99254:99281" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99339:99352" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99467:99582" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99714:99828" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="99982:100096" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="101109:101180" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="101281:101308" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="101366:101379" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="101494:101609" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="101741:101855" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="102009:102123" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="103136:103207" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="103308:103335" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="103393:103406" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="103521:103636" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="103768:103882" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="104036:104150" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="109510:109581" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="109700:109727" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="109785:109798" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="110086:110157" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="110275:110302" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="110360:110373" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="110569:110684" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="110830:110945" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="111069:111184" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="111292:111305" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="111359:111373" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="112402:112473" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="112575:112602" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="112660:112673" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="112892:112963" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="113063:113090" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="113148:113161" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="113349:113464" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="113601:113615" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="115405:115521" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="115597:115713" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="115835:115951" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="116068:116184" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="116305:116421" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="116540:116656" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="116825:116839" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="117469:117540" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="117641:117668" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="117726:117739" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="117910:118026" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="118107:118223" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="118356:118472" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="119646:119762" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="119842:119958" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="120075:120191" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="120299:120415" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="120522:120638" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="120808:120822" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="121417:121533" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="121613:121729" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="121846:121962" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="122070:122186" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="122293:122409" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="122579:122593" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="123173:123289" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="123351:123467" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="123554:123670" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="123758:123874" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="123963:124079" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="124248:124262" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126037:126082" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126190:126200" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126274:126284" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126357:126367" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126441:126486" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="126632:126666" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="128275:128391" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="128453:128569" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="128659:128775" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="128897:128911" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="128974:128988" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="129884:129955" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="130056:130083" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="130141:130154" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="130303:130419" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="130500:130616" ph="..." />
-                <marker date="1539843369777" expanded="true" signature="130740:130754" ph="..." />
+                <marker date="1540360010213" expanded="true" signature="275:339" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="419:634" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="719:932" ph="SELECT count... *" />
+                <marker date="1540360010213" expanded="true" signature="744:929" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="1918:2104" ph="SELECT count... *" />
+                <marker date="1540360010213" expanded="true" signature="1943:2101" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="2189:3870" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="3959:5634" ph="SELECT count... *" />
+                <marker date="1540360010213" expanded="true" signature="3983:5631" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="5716:5788" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="5866:5951" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="6038:6169" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="6221:6278" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="6332:6418" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="6490:6574" ph="SELECT table... contract" />
+                <marker date="1540360010213" expanded="true" signature="6649:6691" ph="SELECT table... contract" />
+                <marker date="1540360010213" expanded="true" signature="6768:6829" ph="SELECT * FRO... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="6908:7054" ph="SELECT id,co... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="7139:7250" ph="SELECT COUNT... code_auto" />
+                <marker date="1540360010213" expanded="true" signature="7161:7247" ph="SELECT code_... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="7369:7527" ph="SELECT id,co... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="7584:7918" ph="SELECT c.id contract_id" />
+                <marker date="1540360010213" expanded="true" signature="7648:7788" ph="SELECT contr... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="8057:8094" ph="SELECT count... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="8152:8404" ph="SELECT count... contract_id" />
+                <marker date="1540360010213" expanded="true" signature="8174:8314" ph="SELECT contr... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="8471:8519" ph="DELETE FROM contract_table_m... " />
+                <marker date="1540360010213" expanded="true" signature="8580:8641" ph="DELETE FROM contract_table_m... " />
+                <marker date="1540360010213" expanded="true" signature="8695:8964" ph="INSERT INTO contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="9021:9207" ph="INSERT INTO contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="9263:9455" ph="UPDATE contract_table_m " />
+                <marker date="1540360010213" expanded="true" signature="9538:9601" ph="SELECT * FRO... contract_table_m" />
+                <marker date="1540360010213" expanded="true" signature="9658:9750" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="9809:9874" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="9955:10010" ph="SELECT table... contract" />
+                <marker date="1540360010213" expanded="true" signature="10072:10136" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="10284:10363" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="10453:10519" ph="SELECT count... id" />
+                <marker date="1540360010213" expanded="true" signature="10477:10514" ph="SELECT id FR... contract" />
+                <marker date="1540360010213" expanded="true" signature="10611:10977" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="11072:11440" ph="SELECT count... id" />
+                <marker date="1540360010213" expanded="true" signature="11492:11787" ph="UPDATE contract... " />
+                <marker date="1540360010213" expanded="true" signature="11872:11963" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="12050:12104" ph="SELECT count... contract" />
+                <marker date="1540360010213" expanded="true" signature="12193:12556" ph="SELECT * FRO... contract" />
+                <marker date="1540360010213" expanded="true" signature="13043:13100" ph="UPDATE contract " />
+                <marker date="1540360010213" expanded="true" signature="13164:13270" ph="UPDATE contract " />
+                <marker date="1540360010213" expanded="true" signature="13330:13445" ph="INSERT INTO contract_free" />
+                <marker date="1540360010213" expanded="true" signature="13533:13592" ph="SELECT * FRO... contract_free" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="handle_receivable_all.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_all.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33594">
-              <caret line="1018" column="0" lean-forward="false" selection-start-line="1018" selection-start-column="0" selection-end-line="1018" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="handle_receivable.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38610">
-              <caret line="1170" column="49" lean-forward="false" selection-start-line="1170" selection-start-column="28" selection-end-line="1170" selection-end-column="49" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -289,26 +228,16 @@
       <file leaf-file-name="handle_receivable_detail.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+            <state relative-caret-position="5115">
+              <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
-                <marker date="1539531440974" expanded="true" signature="77104:77219" ph="..." />
-                <marker date="1539531440974" expanded="true" signature="77353:77467" ph="..." />
-                <marker date="1539531440974" expanded="true" signature="77597:77711" ph="..." />
-                <marker date="1539531440974" expanded="true" signature="77812:77926" ph="..." />
-                <marker date="1539531440974" expanded="true" signature="78045:78159" ph="..." />
-                <marker date="1539531440974" expanded="true" signature="78276:78390" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="81638:81753" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="81887:82001" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="82131:82245" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="82346:82460" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="82579:82693" ph="..." />
+                <marker date="1540361673858" expanded="true" signature="82810:82924" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdTemp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/entity/AdTemp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -330,36 +259,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt; 1</find>
-      <find>check</find>
-      <find>欠费</find>
-      <find>.hide</find>
-      <find>table</find>
-      <find>margin-</find>
-      <find>css</find>
-      <find>.css</find>
-      <find>is_water=</find>
-      <find>handle_receivable_detail&quot;</find>
-      <find>isWater</find>
-      <find>free_export</find>
-      <find>//物业水电费</find>
-      <find>updateWaterLoc</find>
-      <find>updateWater</find>
+      <find>handle_receivable</find>
+      <find>冲销</find>
+      <find>gainContractList</find>
+      <find>&quot;name&quot;</find>
+      <find>费用结算单</find>
+      <find>adTempList</find>
+      <find>'use'</find>
+      <find>&quot;use&quot;</find>
+      <find>use</find>
+      <find>contractFree</find>
+      <find>insertContractFree</find>
+      <find>&quot;login&quot;</find>
+      <find>is_power=</find>
+      <find>车位费明细</find>
+      <find>/isConfirm</find>
+      <find>contractFree:</find>
+      <find>updateisWaterCustomId</find>
       <find>updateContractWater</find>
-      <find>其他</find>
-      <find>shoppingTb11</find>
-      <find>addWork11</find>
-      <find>addWork11(</find>
-      <find>border:</find>
-      <find>id=&quot;water&quot;</find>
-      <find>water</find>
-      <find>margin-top</find>
-      <find>margin-top: 0%;margin-left: 2%;</find>
-      <find>skilAll</find>
-      <find>handle_receivable_all</find>
       <find>handle_receivable&quot;</find>
-      <find>otherCheck</find>
-      <find>*</find>
+      <find>//获取应收 实收</find>
+      <find>handle_receivable_detail&quot;</find>
+      <find>handle_finish&quot;</find>
+      <find>&quot;login_ts&quot;</find>
+      <find>handle_receivable_detail_after</find>
+      <find>account</find>
+      <find>houseList</find>
+      <find>contractList</find>
+      <find>/{export}</find>
+      <find>financeList</find>
+      <find>ListExport</find>
     </findStrings>
     <replaceStrings>
       <replace>2H</replace>
@@ -394,6 +323,9 @@
       <replace>15px</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -402,10 +334,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_del.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_pay.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_car.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_ad.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_car_del.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_ad_del.jsp" />
@@ -423,36 +351,40 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/house.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/house_ad.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/house_car.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java" />
         <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/InteractDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/display.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/ContractService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/impl/ContractServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/StorageDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/entity/AdTemp.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/seckill/resources/css/print_css.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_car_add.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_detail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_del_pay.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_energy.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/seckill/resources/css/department.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/head.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/entity/Contract.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/money_water.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/dao/ContractDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_add.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_all.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/entity/ContractFree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login_ts.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/desk.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java" />
       </list>
     </option>
   </component>
@@ -522,6 +454,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -537,7 +470,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -579,15 +511,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seckill" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
@@ -697,38 +620,41 @@
               <item name="seckill" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seckill" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: javax.servlet:javax.servlet-api:3.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="javax.servlet-api-3.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="descriptor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
-              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
-              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
-              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
-              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
-              <item name="seckill" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
-              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
-              <item name="resources" type="b5c1fe26:NonAndroidSourceTypeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -775,6 +701,34 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
+              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
+              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
+              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
+              <item name="java" type="b5c1fe26:NonAndroidSourceTypeNode" />
+              <item name="seckill" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seckill" type="1abcf292:AndroidViewProjectNode" />
+              <item name="seckill" type="1039202d:NonAndroidModuleNode" />
+              <item name="resources" type="b5c1fe26:NonAndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -797,6 +751,19 @@
       <recent name="org.seckill.service" />
       <recent name="org.seckill.dao" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources\download" />
+      <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources" />
+      <recent name="D:\intellij_save\seckill\src\main\webapp\WEB-INF\jsp" />
+      <recent name="D:\save\intellij\seckill\src\main\webapp\seckill\resources\js\qrcode" />
+      <recent name="D:\save\intellij\seckill\src\main\webapp\seckill\resources\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.seckill.entity" />
+      <recent name="org.seckill.web" />
+      <recent name="org.seckill.service.impl" />
+      <recent name="org.seckill.dao" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -806,19 +773,6 @@
       <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources\css" />
       <recent name="D:\intellij_save\seckill\src\main\resources_ssm\mapper" />
       <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources\download" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.seckill.entity" />
-      <recent name="org.seckill.web" />
-      <recent name="org.seckill.service.impl" />
-      <recent name="org.seckill.dao" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources\download" />
-      <recent name="D:\intellij_save\seckill\src\main\webapp\seckill\resources" />
-      <recent name="D:\intellij_save\seckill\src\main\webapp\WEB-INF\jsp" />
-      <recent name="D:\save\intellij\seckill\src\main\webapp\seckill\resources\js\qrcode" />
-      <recent name="D:\save\intellij\seckill\src\main\webapp\seckill\resources\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1453,6 +1407,13 @@
       <workItem from="1539786411193" duration="840000" />
       <workItem from="1539824849228" duration="15252000" />
       <workItem from="1539851427162" duration="104000" />
+      <workItem from="1539856312238" duration="710000" />
+      <workItem from="1539874152599" duration="1217000" />
+      <workItem from="1539928413354" duration="807000" />
+      <workItem from="1540171020910" duration="2203000" />
+      <workItem from="1540303221218" duration="4628000" />
+      <workItem from="1540343953153" duration="16075000" />
+      <workItem from="1540435431537" duration="1813000" />
     </task>
     <servers />
   </component>
@@ -1489,7 +1450,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1589236000" />
+    <option name="totallyTimeSpent" value="1616689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1505,36 +1466,36 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43095237" sideWeight="0.52051836" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32380953" sideWeight="0.49785408" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5416667" sideWeight="0.47948164" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32380953" sideWeight="0.49785408" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2737581" sideWeight="0.4904762" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21220303" sideWeight="0.5095238" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5274463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2792363" sideWeight="0.49784017" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5405728" sideWeight="0.47948164" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32380953" sideWeight="0.49785408" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27591792" sideWeight="0.4904762" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21220303" sideWeight="0.5095238" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5285714" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3" sideWeight="0.49784017" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1564,27 +1525,15 @@
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java</url>
-          <line>3297</line>
-          <properties />
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java</url>
-          <line>2083</line>
+          <line>2085</line>
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java</url>
-          <line>1064</line>
-          <properties />
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java</url>
-          <line>1487</line>
+          <line>1489</line>
           <properties />
           <option name="timeStamp" value="104" />
         </line-breakpoint>
@@ -1592,7 +1541,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="130" />
+      <option name="time" value="131" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1601,36 +1550,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/jquery_ui.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/tag.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/common.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="92" lean-forward="false" selection-start-line="18" selection-start-column="92" selection-end-line="18" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/seckill/resources/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6633">
@@ -1715,25 +1634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/entity/FreeExport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/impl/ContractServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6798">
-          <caret line="269" column="41" lean-forward="false" selection-start-line="269" selection-start-column="27" selection-end-line="269" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1758,39 +1662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.7.RELEASE/spring-web-4.1.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/StorageDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="514" column="103" lean-forward="false" selection-start-line="514" selection-start-column="92" selection-end-line="514" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/ContractService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="105" column="34" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="1347" column="52" lean-forward="true" selection-start-line="1347" selection-start-column="52" selection-end-line="1347" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="290" column="37" lean-forward="false" selection-start-line="290" selection-start-column="37" selection-end-line="290" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1801,24 +1676,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/seckill/resources/css/print_css.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="76" column="24" lean-forward="false" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1848,14 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11022">
           <caret line="1365" column="42" lean-forward="false" selection-start-line="1365" selection-start-column="42" selection-end-line="1365" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="39" column="11" lean-forward="false" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1899,19 +1752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-          <folding>
-            <marker date="1539606909327" expanded="true" signature="275:339" ph="SELECT * FRO... contract" />
-            <marker date="1539606909327" expanded="true" signature="419:608" ph="SELECT * FRO... contract" />
-            <marker date="1539606909327" expanded="true" signature="693:879" ph="SELECT count... *" />
-            <marker date="1539606909327" expanded="true" signature="718:876" ph="SELECT * FRO... contract" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/seckill/resources/css/department.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -1931,30 +1771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="156" column="29" lean-forward="false" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-          <folding>
-            <element signature="e#4291#4292#0" expanded="true" />
-            <element signature="e#4334#4335#0" expanded="true" />
-            <element signature="e#4372#4373#0" expanded="true" />
-            <element signature="e#4401#4402#0" expanded="true" />
-            <element signature="e#4429#4430#0" expanded="true" />
-            <element signature="e#4468#4469#0" expanded="true" />
-            <element signature="e#4502#4503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
-          <folding>
-            <marker date="1539531440974" expanded="true" signature="77104:77219" ph="..." />
-            <marker date="1539531440974" expanded="true" signature="77353:77467" ph="..." />
-            <marker date="1539531440974" expanded="true" signature="77597:77711" ph="..." />
-            <marker date="1539531440974" expanded="true" signature="77812:77926" ph="..." />
-            <marker date="1539531440974" expanded="true" signature="78045:78159" ph="..." />
-            <marker date="1539531440974" expanded="true" signature="78276:78390" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1962,90 +1778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/money_water.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4884">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12804">
-          <caret line="388" column="11" lean-forward="false" selection-start-line="388" selection-start-column="11" selection-end-line="388" selection-end-column="11" />
-          <folding>
-            <marker date="1539840328605" expanded="true" signature="268:286" ph="SELECT * FRO... free" />
-            <marker date="1539840328605" expanded="true" signature="368:395" ph="SELECT * FRO... goods_status" />
-            <marker date="1539840328605" expanded="true" signature="469:492" ph="SELECT * FRO... contact" />
-            <marker date="1539840328605" expanded="true" signature="563:883" ph="SELECT * FRO... house" />
-            <marker date="1539840328605" expanded="true" signature="953:1166" ph="SELECT * FRO... house" />
-            <marker date="1539840328605" expanded="true" signature="1227:1365" ph="UPDATE car_reg... " />
-            <marker date="1539840328605" expanded="true" signature="1434:1778" ph="SELECT * FRO... house" />
-            <marker date="1539840328605" expanded="true" signature="1859:1951" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="2036:2091" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="2174:2256" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="2344:2392" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="2480:2581" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="2673:2738" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="2825:2908" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="2999:3047" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="3099:3225" ph="UPDATE contract " />
-            <marker date="1539840328605" expanded="true" signature="3301:3346" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="3404:4050" ph="INSERT INTO contract" />
-            <marker date="1539840328605" expanded="true" signature="4107:4723" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="4774:4822" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="4880:5346" ph="INSERT INTO contract" />
-            <marker date="1539840328605" expanded="true" signature="5406:5845" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="5905:6371" ph="INSERT INTO contract" />
-            <marker date="1539840328605" expanded="true" signature="6432:6871" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="6945:7057" ph="SELECT ifnul... contract" />
-            <marker date="1539840328605" expanded="true" signature="7127:7792" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="7865:8512" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="8585:9250" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="9326:9965" ph="SELECT count... contract" />
-            <marker date="1539840328605" expanded="true" signature="10011:10054" ph="DELETE FROM contract" />
-            <marker date="1539840328605" expanded="true" signature="10132:10175" ph="SELECT sort contact" />
-            <marker date="1539840328605" expanded="true" signature="10269:10341" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="10420:10568" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="10651:10788" ph="SELECT count... " />
-            <marker date="1539840328605" expanded="true" signature="10845:11101" ph="INSERT INTO table3388" />
-            <marker date="1539840328605" expanded="true" signature="11157:11320" ph="INSERT INTO table77" />
-            <marker date="1539840328605" expanded="true" signature="11385:11444" ph="UPDATE table77... " />
-            <marker date="1539840328605" expanded="true" signature="11495:11538" ph="DELETE FROM table3388... " />
-            <marker date="1539840328605" expanded="true" signature="11591:11632" ph="DELETE FROM table77... " />
-            <marker date="1539840328605" expanded="true" signature="11711:11820" ph="SELECT * FRO... free_export" />
-            <marker date="1539840328605" expanded="true" signature="11893:12030" ph="SELECT start... table77" />
-            <marker date="1539840328605" expanded="true" signature="12083:12156" ph="UPDATE house... " />
-            <marker date="1539840328605" expanded="true" signature="12210:12306" ph="INSERT INTO table1" />
-            <marker date="1539840328605" expanded="true" signature="12358:12398" ph="DELETE FROM table1... " />
-            <marker date="1539840328605" expanded="true" signature="12479:13058" ph="SELECT * FRO... *" />
-            <marker date="1539840328605" expanded="true" signature="12496:12732" ph="SELECT c.*,'... contract" />
-            <marker date="1539840328605" expanded="true" signature="12759:13029" ph="SELECT c.*,'... contract" />
-            <marker date="1539840328605" expanded="true" signature="13144:13704" ph="SELECT count... *" />
-            <marker date="1539840328605" expanded="true" signature="13168:13404" ph="SELECT c.*,'... contract" />
-            <marker date="1539840328605" expanded="true" signature="13431:13701" ph="SELECT c.*,'... contract" />
-            <marker date="1539840328605" expanded="true" signature="13795:13878" ph="SELECT count... free_export" />
-            <marker date="1539840328605" expanded="true" signature="13935:14338" ph="UPDATE house... " />
-            <marker date="1539840328605" expanded="true" signature="13992:14337" ph="SELECT locat... location" />
-            <marker date="1539840328605" expanded="true" signature="14015:14330" ph="SELECT DISTI... contract" />
-            <marker date="1539840328605" expanded="true" signature="14395:14572" ph="UPDATE house... " />
-            <marker date="1539840328605" expanded="true" signature="14455:14571" ph="SELECT locat... location" />
-            <marker date="1539840328605" expanded="true" signature="14477:14568" ph="SELECT h.loc... house" />
-            <marker date="1539840328605" expanded="true" signature="14630:14952" ph="UPDATE house... " />
-            <marker date="1539840328605" expanded="true" signature="14687:14951" ph="SELECT locat... location" />
-            <marker date="1539840328605" expanded="true" signature="14709:14948" ph="SELECT h.loc... house" />
-            <marker date="1539840328605" expanded="true" signature="15027:15408" ph="SELECT * FRO... contract" />
-            <marker date="1539840328605" expanded="true" signature="15959:16428" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="16290:16427" ph="SELECT uuid uuid" />
-            <marker date="1539840328605" expanded="true" signature="16308:16424" ph="SELECT uuid contract" />
-            <marker date="1539840328605" expanded="true" signature="16492:16816" ph="UPDATE contract... " />
-            <marker date="1539840328605" expanded="true" signature="16888:16959" ph="UPDATE free_export " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2053,52 +1785,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4620">
           <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/money_water.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5577">
-          <caret line="193" column="63" lean-forward="false" selection-start-line="193" selection-start-column="63" selection-end-line="193" selection-end-column="63" />
-          <folding />
+        <state relative-caret-position="5082">
+          <caret line="154" column="62" lean-forward="false" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/impl/ContractServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38610">
-          <caret line="1170" column="49" lean-forward="false" selection-start-line="1170" selection-start-column="28" selection-end-line="1170" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90651">
-          <caret line="2830" column="34" lean-forward="false" selection-start-line="2830" selection-start-column="34" selection-end-line="2830" selection-end-column="34" />
-          <folding>
-            <element signature="method#handleReceivablePay#0;class#HandleController#0" expanded="false" />
-            <element signature="method#handleReceivablePayQuery#0;class#HandleController#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="6699">
+          <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_all.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33594">
-          <caret line="1018" column="0" lean-forward="false" selection-start-line="1018" selection-start-column="0" selection-end-line="1018" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="495">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contract_house_add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="2156" column="33" lean-forward="true" selection-start-line="2156" selection-start-column="33" selection-end-line="2156" selection-end-column="33" />
+        <state relative-caret-position="85239">
+          <caret line="2583" column="0" lean-forward="false" selection-start-line="2583" selection-start-column="0" selection-end-line="2584" selection-end-column="24" />
           <folding>
-            <element signature="e#28056#28063#0#HTML" expanded="true" />
-            <element signature="e#50948#50955#0#HTML" expanded="true" />
             <marker date="1539843369777" expanded="true" signature="94137:94169" ph="..." />
             <marker date="1539843369777" expanded="true" signature="94567:94638" ph="..." />
             <marker date="1539843369777" expanded="true" signature="94738:94765" ph="..." />
@@ -2199,6 +1914,276 @@
             <marker date="1539843369777" expanded="true" signature="130500:130616" ph="..." />
             <marker date="1539843369777" expanded="true" signature="130740:130754" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/dao/HandleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="101" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.7.RELEASE/spring-web-4.1.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="860" column="0" lean-forward="true" selection-start-line="860" selection-start-column="0" selection-end-line="860" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/entity/ContractFree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/impl/HandleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="193" column="57" lean-forward="false" selection-start-line="193" selection-start-column="57" selection-end-line="193" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/HandleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="97" column="26" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/service/ContractService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4752">
+          <caret line="147" column="27" lean-forward="false" selection-start-line="147" selection-start-column="8" selection-end-line="147" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/ContractDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12078">
+          <caret line="366" column="35" lean-forward="false" selection-start-line="366" selection-start-column="16" selection-end-line="366" selection-end-column="35" />
+          <folding>
+            <marker date="1539874706389" expanded="true" signature="268:286" ph="SELECT * FRO... free" />
+            <marker date="1539874706389" expanded="true" signature="368:395" ph="SELECT * FRO... goods_status" />
+            <marker date="1539874706389" expanded="true" signature="469:492" ph="SELECT * FRO... contact" />
+            <marker date="1539874706389" expanded="true" signature="563:883" ph="SELECT * FRO... house" />
+            <marker date="1539874706389" expanded="true" signature="953:1166" ph="SELECT * FRO... house" />
+            <marker date="1539874706389" expanded="true" signature="1227:1365" ph="UPDATE car_reg... " />
+            <marker date="1539874706389" expanded="true" signature="1434:1778" ph="SELECT * FRO... house" />
+            <marker date="1539874706389" expanded="true" signature="1859:1951" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="2036:2091" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="2174:2256" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="2344:2392" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="2480:2581" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="2673:2738" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="2825:2908" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="2999:3047" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="3099:3225" ph="UPDATE contract " />
+            <marker date="1539874706389" expanded="true" signature="3301:3346" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="3404:4050" ph="INSERT INTO contract" />
+            <marker date="1539874706389" expanded="true" signature="4107:4723" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="4774:4822" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="4880:5346" ph="INSERT INTO contract" />
+            <marker date="1539874706389" expanded="true" signature="5406:5845" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="5905:6371" ph="INSERT INTO contract" />
+            <marker date="1539874706389" expanded="true" signature="6432:6871" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="6945:7057" ph="SELECT ifnul... contract" />
+            <marker date="1539874706389" expanded="true" signature="7127:7792" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="7865:8512" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="8585:9250" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="9326:9965" ph="SELECT count... contract" />
+            <marker date="1539874706389" expanded="true" signature="10011:10054" ph="DELETE FROM contract" />
+            <marker date="1539874706389" expanded="true" signature="10132:10175" ph="SELECT sort contact" />
+            <marker date="1539874706389" expanded="true" signature="10269:10341" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="10420:10568" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="10651:10788" ph="SELECT count... " />
+            <marker date="1539874706389" expanded="true" signature="10845:11101" ph="INSERT INTO table3388" />
+            <marker date="1539874706389" expanded="true" signature="11157:11320" ph="INSERT INTO table77" />
+            <marker date="1539874706389" expanded="true" signature="11385:11444" ph="UPDATE table77... " />
+            <marker date="1539874706389" expanded="true" signature="11495:11538" ph="DELETE FROM table3388... " />
+            <marker date="1539874706389" expanded="true" signature="11591:11632" ph="DELETE FROM table77... " />
+            <marker date="1539874706389" expanded="true" signature="11711:11820" ph="SELECT * FRO... free_export" />
+            <marker date="1539874706389" expanded="true" signature="11893:12030" ph="SELECT start... table77" />
+            <marker date="1539874706389" expanded="true" signature="12083:12156" ph="UPDATE house... " />
+            <marker date="1539874706389" expanded="true" signature="12210:12306" ph="INSERT INTO table1" />
+            <marker date="1539874706389" expanded="true" signature="12358:12398" ph="DELETE FROM table1... " />
+            <marker date="1539874706389" expanded="true" signature="12479:13058" ph="SELECT * FRO... *" />
+            <marker date="1539874706389" expanded="true" signature="12496:12732" ph="SELECT c.*,'... contract" />
+            <marker date="1539874706389" expanded="true" signature="12759:13029" ph="SELECT c.*,'... contract" />
+            <marker date="1539874706389" expanded="true" signature="13144:13704" ph="SELECT count... *" />
+            <marker date="1539874706389" expanded="true" signature="13168:13404" ph="SELECT c.*,'... contract" />
+            <marker date="1539874706389" expanded="true" signature="13431:13701" ph="SELECT c.*,'... contract" />
+            <marker date="1539874706389" expanded="true" signature="13795:13878" ph="SELECT count... free_export" />
+            <marker date="1539874706389" expanded="true" signature="13935:14338" ph="UPDATE house... " />
+            <marker date="1539874706389" expanded="true" signature="13992:14337" ph="SELECT locat... location" />
+            <marker date="1539874706389" expanded="true" signature="14015:14330" ph="SELECT DISTI... contract" />
+            <marker date="1539874706389" expanded="true" signature="14395:14572" ph="UPDATE house... " />
+            <marker date="1539874706389" expanded="true" signature="14455:14571" ph="SELECT locat... location" />
+            <marker date="1539874706389" expanded="true" signature="14477:14568" ph="SELECT h.loc... house" />
+            <marker date="1539874706389" expanded="true" signature="14630:14952" ph="UPDATE house... " />
+            <marker date="1539874706389" expanded="true" signature="14687:14951" ph="SELECT locat... location" />
+            <marker date="1539874706389" expanded="true" signature="14709:14948" ph="SELECT h.loc... house" />
+            <marker date="1539874706389" expanded="true" signature="15027:15408" ph="SELECT * FRO... contract" />
+            <marker date="1539874706389" expanded="true" signature="15959:16426" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="16490:16812" ph="UPDATE contract... " />
+            <marker date="1539874706389" expanded="true" signature="16884:16955" ph="UPDATE free_export " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources_ssm/mapper/HandleDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11385">
+          <caret line="345" column="86" lean-forward="false" selection-start-line="345" selection-start-column="86" selection-end-line="345" selection-end-column="86" />
+          <folding>
+            <marker date="1540360010213" expanded="true" signature="275:339" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="419:634" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="719:932" ph="SELECT count... *" />
+            <marker date="1540360010213" expanded="true" signature="744:929" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="1918:2104" ph="SELECT count... *" />
+            <marker date="1540360010213" expanded="true" signature="1943:2101" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="2189:3870" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="3959:5634" ph="SELECT count... *" />
+            <marker date="1540360010213" expanded="true" signature="3983:5631" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="5716:5788" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="5866:5951" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="6038:6169" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="6221:6278" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="6332:6418" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="6490:6574" ph="SELECT table... contract" />
+            <marker date="1540360010213" expanded="true" signature="6649:6691" ph="SELECT table... contract" />
+            <marker date="1540360010213" expanded="true" signature="6768:6829" ph="SELECT * FRO... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="6908:7054" ph="SELECT id,co... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="7139:7250" ph="SELECT COUNT... code_auto" />
+            <marker date="1540360010213" expanded="true" signature="7161:7247" ph="SELECT code_... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="7369:7527" ph="SELECT id,co... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="7584:7918" ph="SELECT c.id contract_id" />
+            <marker date="1540360010213" expanded="true" signature="7648:7788" ph="SELECT contr... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="8057:8094" ph="SELECT count... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="8152:8404" ph="SELECT count... contract_id" />
+            <marker date="1540360010213" expanded="true" signature="8174:8314" ph="SELECT contr... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="8471:8519" ph="DELETE FROM contract_table_m... " />
+            <marker date="1540360010213" expanded="true" signature="8580:8641" ph="DELETE FROM contract_table_m... " />
+            <marker date="1540360010213" expanded="true" signature="8695:8964" ph="INSERT INTO contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="9021:9207" ph="INSERT INTO contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="9263:9455" ph="UPDATE contract_table_m " />
+            <marker date="1540360010213" expanded="true" signature="9538:9601" ph="SELECT * FRO... contract_table_m" />
+            <marker date="1540360010213" expanded="true" signature="9658:9750" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="9809:9874" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="9955:10010" ph="SELECT table... contract" />
+            <marker date="1540360010213" expanded="true" signature="10072:10136" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="10284:10363" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="10453:10519" ph="SELECT count... id" />
+            <marker date="1540360010213" expanded="true" signature="10477:10514" ph="SELECT id FR... contract" />
+            <marker date="1540360010213" expanded="true" signature="10611:10977" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="11072:11440" ph="SELECT count... id" />
+            <marker date="1540360010213" expanded="true" signature="11492:11787" ph="UPDATE contract... " />
+            <marker date="1540360010213" expanded="true" signature="11872:11963" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="12050:12104" ph="SELECT count... contract" />
+            <marker date="1540360010213" expanded="true" signature="12193:12556" ph="SELECT * FRO... contract" />
+            <marker date="1540360010213" expanded="true" signature="13043:13100" ph="UPDATE contract " />
+            <marker date="1540360010213" expanded="true" signature="13164:13270" ph="UPDATE contract " />
+            <marker date="1540360010213" expanded="true" signature="13330:13445" ph="INSERT INTO contract_free" />
+            <marker date="1540360010213" expanded="true" signature="13533:13592" ph="SELECT * FRO... contract_free" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5115">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <marker date="1540361673858" expanded="true" signature="81638:81753" ph="..." />
+            <marker date="1540361673858" expanded="true" signature="81887:82001" ph="..." />
+            <marker date="1540361673858" expanded="true" signature="82131:82245" ph="..." />
+            <marker date="1540361673858" expanded="true" signature="82346:82460" ph="..." />
+            <marker date="1540361673858" expanded="true" signature="82579:82693" ph="..." />
+            <marker date="1540361673858" expanded="true" signature="82810:82924" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6303">
+          <caret line="206" column="19" lean-forward="false" selection-start-line="206" selection-start-column="19" selection-end-line="206" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login_ts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3531">
+          <caret line="107" column="39" lean-forward="false" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/desk.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="178" column="23" lean-forward="false" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/handle_receivable_detail_after.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11616">
+          <caret line="352" column="36" lean-forward="false" selection-start-line="352" selection-start-column="36" selection-end-line="352" selection-end-column="36" />
+          <folding>
+            <marker date="1540372817069" expanded="true" signature="85642:85757" ph="..." />
+            <marker date="1540372817069" expanded="true" signature="85891:86005" ph="..." />
+            <marker date="1540372817069" expanded="true" signature="86135:86249" ph="..." />
+            <marker date="1540372817069" expanded="true" signature="86350:86464" ph="..." />
+            <marker date="1540372817069" expanded="true" signature="86583:86697" ph="..." />
+            <marker date="1540372817069" expanded="true" signature="86814:86928" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/HandleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="440" column="24" lean-forward="true" selection-start-line="440" selection-start-column="24" selection-end-line="440" selection-end-column="24" />
+          <folding>
+            <element signature="method#handleReceivablePay#0;class#HandleController#0" expanded="false" />
+            <element signature="method#handleReceivablePayQuery#0;class#HandleController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/StorageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="1588" column="0" lean-forward="false" selection-start-line="1588" selection-start-column="0" selection-end-line="1588" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/ContractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="2938" column="72" lean-forward="false" selection-start-line="2938" selection-start-column="72" selection-end-line="2938" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/seckill/web/InteractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="934" column="53" lean-forward="false" selection-start-line="934" selection-start-column="53" selection-end-line="934" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

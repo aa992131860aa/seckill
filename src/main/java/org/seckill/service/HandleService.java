@@ -3,6 +3,7 @@ package org.seckill.service;
 import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.Contact;
 import org.seckill.entity.Contract;
+import org.seckill.entity.ContractFree;
 import org.seckill.entity.TableM;
 
 import java.util.List;
@@ -93,4 +94,8 @@ public interface HandleService {
     List<Contract> gainContractListAll(String codeCheck, String locCheck);
 
     int gainContractListTotalAll();
+
+    int insertContractFree(int customId, String name, String loc, String no, double money);
+
+    List<ContractFree> gainContractFreeList(int customId);
 }

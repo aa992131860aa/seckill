@@ -191,6 +191,22 @@ public class IndexController {
         return "login"; //  /WEB-INF/jsp/"list".jsp
     }
 
+    @RequestMapping(value = "/login_ts", method = RequestMethod.GET)
+    public String loginTs(Model model, HttpServletRequest request) {
+
+//        try {
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            if (MysqlBackup.exportDatabaseTool("116.62.28.28", "root", "admin123", "D:/backupDatabase", sdf.format(new Date())+".sql", "seckill")) {
+//                System.out.println("数据库成功备份！！！");
+//            } else {
+//                System.out.println("数据库备份失败！！！");
+//            }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        return "login_ts"; //  /WEB-INF/jsp/"list".jsp
+    }
+
     @RequestMapping(value = "/login/{account}/{pwd}/query", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     @ResponseBody
     public Users loginImpl(@PathVariable("account") String account, @PathVariable("pwd") String pwd) {
@@ -966,6 +982,7 @@ public class IndexController {
         return "user";
 
     }
+
     @RequestMapping(value = "/user_role/{page}/query", method = RequestMethod.GET)
     public String userRoleQueryImpl(Model model, @PathVariable("page") int page) {
         List<Users> list = baseService.queryUser(page * CONST.PAGE_SIZE, CONST.PAGE_SIZE);
@@ -977,6 +994,7 @@ public class IndexController {
         return "user_role";
 
     }
+
     @RequestMapping(value = "/user/{id}/{account}/{name}/{pwd}/{department_id}/modify", method = RequestMethod.POST)
     @ResponseBody
     public int userModifyImpl(HttpServletRequest request, @PathVariable("id") int id, @PathVariable("account") String account, @PathVariable("name") String name, @PathVariable("pwd")

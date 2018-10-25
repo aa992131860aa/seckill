@@ -779,8 +779,9 @@ public class InteractController {
         model.addAttribute("taxTotal", taxTotal);
         if ("export".equals(export)) {
             //获取数据
+            List<Finance> financeListExport = interactService.gainFinanceList(userId, isAdmin, 0,10000);
 
-            String content[][] = new String[financeList.size()+1][];
+            String content[][] = new String[financeListExport.size()+1][];
 
             //excel标题
             String[] title = {"序号", "公司名称", "销售收入", "利润", "税收", "时间"};
@@ -791,24 +792,24 @@ public class InteractController {
             //sheet名
             String sheetName = "财务数据汇总表";
 
-            for (int i = 0; i < financeList.size(); i++) {
+            for (int i = 0; i < financeListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = financeList.get(i).getId() + "";
-                content[i][1] = financeList.get(i).getName();
-                content[i][2] = financeList.get(i).getSale() + "";
-                content[i][3] = financeList.get(i).getProfit() + "";
-                content[i][4] = financeList.get(i).getTax() + "";
-                content[i][5] = financeList.get(i).getDate();
+                content[i][0] = financeListExport.get(i).getId() + "";
+                content[i][1] = financeListExport.get(i).getName();
+                content[i][2] = financeListExport.get(i).getSale() + "";
+                content[i][3] = financeListExport.get(i).getProfit() + "";
+                content[i][4] = financeListExport.get(i).getTax() + "";
+                content[i][5] = financeListExport.get(i).getDate();
 
 
             }
 
-            content[financeList.size()] = new String[title.length];
-            content[financeList.size()][0] = "合计" + "";
-            content[financeList.size()][2] = saleTotal + "";
-            content[financeList.size()][3] = profitTotal + "";
-            content[financeList.size()][4] = taxTotal + "";
+            content[financeListExport.size()] = new String[title.length];
+            content[financeListExport.size()][0] = "合计" + "";
+            //content[financeListExport.size()][2] = saleTotal + "";
+            //content[financeListExport.size()][3] = profitTotal + "";
+            //content[financeListExport.size()][4] = taxTotal + "";
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
 
@@ -935,8 +936,9 @@ public class InteractController {
         model.addAttribute("taxTotal", taxTotal);
         if ("export".equals(export)) {
             //获取数据
+            List<Finance> financeListExport = interactService.gainQueryFinanceList(code, startDate, endDate, userId, isAdmin, 0,100000);
 
-            String content[][] = new String[financeList.size()+1][];
+            String content[][] = new String[financeListExport.size()+1][];
 
             //excel标题
             String[] title = {"序号", "公司名称", "销售收入", "利润", "税收", "时间"};
@@ -947,24 +949,24 @@ public class InteractController {
             //sheet名
             String sheetName = "财务数据汇总表";
 
-            for (int i = 0; i < financeList.size(); i++) {
+            for (int i = 0; i < financeListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = financeList.get(i).getId() + "";
-                content[i][1] = financeList.get(i).getName();
-                content[i][2] = financeList.get(i).getSale() + "";
-                content[i][3] = financeList.get(i).getProfit() + "";
-                content[i][4] = financeList.get(i).getTax() + "";
-                content[i][5] = financeList.get(i).getDate();
+                content[i][0] = financeListExport.get(i).getId() + "";
+                content[i][1] = financeListExport.get(i).getName();
+                content[i][2] = financeListExport.get(i).getSale() + "";
+                content[i][3] = financeListExport.get(i).getProfit() + "";
+                content[i][4] = financeListExport.get(i).getTax() + "";
+                content[i][5] = financeListExport.get(i).getDate();
 
 
             }
 
-            content[financeList.size()] = new String[title.length];
-            content[financeList.size()][0] = "合计" + "";
-            content[financeList.size()][2] = saleTotal + "";
-            content[financeList.size()][3] = profitTotal + "";
-            content[financeList.size()][4] = taxTotal + "";
+            content[financeListExport.size()] = new String[title.length];
+            content[financeListExport.size()][0] = "合计" + "";
+            //content[financeListExport.size()][2] = saleTotal + "";
+            //content[financeListExport.size()][3] = profitTotal + "";
+            //content[financeListExport.size()][4] = taxTotal + "";
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
 

@@ -22,6 +22,20 @@
             class="mui-btn mui-btn-outlined mui-btn mui-btn-primary"
             onclick="backMain()"> 返回首页
     </button>
+
+    <style media="print">
+        @media print {
+             body {
+                font-size: 12px;
+            }
+        }
+
+        @page {
+            size: auto;  /* auto is the initial value */
+            margin: 0mm; /* this affects the margin in the printer settings */
+        }
+    </style>
+
 </header>
 <div class="mui-content">
 

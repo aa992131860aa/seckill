@@ -33,9 +33,6 @@
 </header>
 <div class="mui-content">
 
-    <div id="a4" style="height: 297mm;width: 210mm;display: none">
-        A4纸的尺寸是210*297mm
-    </div>
 
     <div class="form-inline" style="margin-top: 20px">
 
@@ -230,7 +227,7 @@
                         </c:forEach>
 
 
-                        <div class="form-group" id="house" >
+                        <div class="form-group" id="house">
                             <div class="table-responsive col-md-12" style="clear: both;margin-top: 0px">
                                 <table class="table">
 
@@ -339,7 +336,7 @@
                             </c:if>
                         </c:forEach>
 
-                        <div class="form-group" id="cash" >
+                        <div class="form-group" id="cash">
                             <div class="table-responsive col-md-12" style="clear: both;margin-top: 0px">
                                 <table class="table">
 
@@ -862,6 +859,8 @@
                             </div>
                         </div>
 
+
+
                         <c:set var="houseRent" value="-1"></c:set>
                         <c:forEach items="${cList.contractDetailList}" var="list" varStatus="pLoop">
                             <c:if test="${list.style=='car'}">
@@ -889,7 +888,7 @@
                         </c:forEach>
 
                         <div class="form-group" id="car">
-                            <div class="table-responsive col-md-12" style="margin-top: 0px;">
+                            <div class="table-responsive col-md-12" style="clear: both;margin-top: 0px">
                                 <table class="table">
 
 
@@ -906,10 +905,10 @@
                                                             <th>合同号</th>
                                                             <th>位置编号</th>
                                                             <th>天数</th>
+                                                                <%--<th>单价</th>--%>
+                                                            <th>楼层</th>
                                                                 <%--<th>年总价(元)</th>--%>
-                                                            <th>车位类型</th>
-                                                            <th>车牌</th>
-                                                            <th>联系人</th>
+                                                            <th>广告位类型</th>
                                                             <th>收费期间</th>
                                                             <th>金额小计</th>
 
@@ -932,15 +931,15 @@
                                             <c:forEach items="${list.tableList11}" var="t" varStatus="loop">
                                                 <c:if test="${!cList.tableU.contains(''.concat(list.no).concat('车位-租金').concat('fantasy'))}">
                                                     <tr>
-                                                        <td>${list.no}</td>
 
+                                                        <td>${list.no}</td>
                                                         <td>${t.table0}</td>
                                                         <td>${list.day}</td>
+                                                            <%--<td>${list.tableList1[loop.index].table6}</td>--%>
+                                                        <td>${t.table1}</td>
                                                             <%--<td>${t.table2}</td>--%>
                                                         <td>${t.table3}</td>
 
-                                                        <td>${list.tableList1[loop.index].table11}</td>
-                                                        <td>${list.tableList1[loop.index].table8}</td>
                                                         <td>${list.startDate} ${list.endDate}</td>
                                                         <td>${t.table2}</td>
                                                     </tr>
@@ -955,6 +954,8 @@
                                 </table>
                             </div>
                         </div>
+
+
 
                         <c:if test="${cList.contractDetailList[0].tableList2H.size()>0}">
 

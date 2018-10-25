@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import org.seckill.dao.HandleDao;
 import org.seckill.entity.Contact;
 import org.seckill.entity.Contract;
+import org.seckill.entity.ContractFree;
 import org.seckill.entity.TableM;
 import org.seckill.service.HandleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -183,5 +184,13 @@ public class HandleServiceImpl implements HandleService {
 
     public int gainContractListTotalAll() {
         return handleDao.gainContractListTotalAll();
+    }
+
+    public int insertContractFree(int customId, String name, String loc, String no, double money){
+        return handleDao.insertContractFree(customId, name, loc, no, money);
+    }
+
+    public List<ContractFree> gainContractFreeList(int customId){
+        return  handleDao.gainContractFreeList(customId);
     }
 }

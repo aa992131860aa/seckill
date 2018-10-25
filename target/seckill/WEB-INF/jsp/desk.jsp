@@ -125,11 +125,14 @@
         swipeBack: true //启用右滑关闭功能
     });
     var userId = $.cookie("user_id");
+    var account = $.cookie('account');
+
     function logout() {
 
         $.cookie("pwd", "", {expires: -1});
-        window.location.href='/seckill/login';
+        window.location.href = '/seckill/login';
     }
+
     function skipMy() {
         mui.openWindow({
             url: '/seckill/my/' + userId,
@@ -170,6 +173,10 @@
             url: '/seckill/interact/' + userId,
             id: 'interact'
         })
+    }
+
+    if (account == 'ts') {
+        skipInteract();
     }
 
     function skipBase() {

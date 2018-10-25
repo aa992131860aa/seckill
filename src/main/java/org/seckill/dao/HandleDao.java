@@ -3,6 +3,7 @@ package org.seckill.dao;
 import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.Contact;
 import org.seckill.entity.Contract;
+import org.seckill.entity.ContractFree;
 import org.seckill.entity.TableM;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -16,7 +17,7 @@ public interface HandleDao {
 
     int gainContractListTotal();
 
-    List<Contract> gainContractListAll(@Param("codeCheck") String codeCheck,@Param("locCheck") String locCheck);
+    List<Contract> gainContractListAll(@Param("codeCheck") String codeCheck, @Param("locCheck") String locCheck);
 
     int gainContractListTotalAll();
 
@@ -93,5 +94,10 @@ public interface HandleDao {
     List<String> gainTableMCustomId(@Param("customId") int customId);
 
     int updateTableMCustomId(@Param("tableM") String tableM, @Param("customId") int customId);
+
     int updateisWaterCustomId(@Param("isWater") int isWater, @Param("customId") int customId);
+
+    int insertContractFree(@Param("customId") int customId, @Param("name") String name, @Param("loc") String loc, @Param("no") String no, @Param("money") double money);
+
+    List<ContractFree> gainContractFreeList(@Param("customId") int customId);
 }

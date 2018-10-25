@@ -7,10 +7,10 @@
         SELECT * FROM contract WHERE table1 LIKE  CONCAT('%',#{loc},'%')
     </select>
     <select id="gainContractList" resultType="Contract">
-        SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 GROUP BY custom_id DESC limit #{page},#{pageSize}
+        SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 OR is_power=1 OR is_air=1 GROUP BY custom_id DESC limit #{page},#{pageSize}
       </select>
     <select id="gainContractListTotal" resultType="Integer">
-       SELECT count(id) FROM  ( SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 GROUP BY custom_id) a
+       SELECT count(id) FROM  ( SELECT * FROM contract WHERE is_confirm = 0 AND is_ok=1 AND is_pay=0 AND is_finish=0  OR is_finish=0 AND is_pay=1 AND is_ok=1 OR is_water=1 OR is_power=1 OR is_air=1  GROUP BY custom_id) a
     </select>
     <select id="gainContractListAll" resultType="Contract">
         SELECT c.* FROM contract c ,custom cu ,table1 t1 WHERE c.table1 LIKE CONCAT('%',t1.loc,'%') AND
@@ -77,6 +77,29 @@
         <if test="endDate!=''">
             AND start_date <![CDATA[<=]]> #{endDate}
         </if>
+
+        OR is_power=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        OR is_air=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+
         GROUP BY custom_id DESC limit #{page},#{pageSize}
     </select>
     <select id="gainContractListTotalQuery" resultType="Integer">
@@ -112,6 +135,27 @@
             AND start_date <![CDATA[<=]]> #{endDate}
         </if>
 
+        OR is_power=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
+
+        OR is_air=1
+        <if test="code!=''">
+            AND code LIKE CONCAT('%',#{code},'%')
+        </if>
+        <if test="startDate!=''">
+            AND start_date >= #{startDate}
+        </if>
+        <if test="endDate!=''">
+            AND start_date <![CDATA[<=]]> #{endDate}
+        </if>
         GROUP BY custom_id) a
     </select>
 
@@ -299,6 +343,15 @@
         UPDATE  contract SET is_finish=#{isFinish} WHERE id=#{id}
     </update>
     <update id="updateisWaterCustomId">
-         UPDATE  contract SET is_water=#{isWater} WHERE custom_id=#{customId}
+         UPDATE  contract SET is_water=#{isWater},is_power=#{isWater},is_air=#{isWater} WHERE custom_id=#{customId}
     </update>
+    <insert id="insertContractFree">
+        INSERT  INTO  contract_free(custom_id,name,loc,no,money)
+        VALUES (#{customId},#{name},#{loc},#{no},#{money})
+    </insert>
+    <select id="gainContractFreeList" resultType="ContractFree">
+        SELECT  * FROM  contract_free WHERE custom_id = #{customId}
+    </select>
+
+
 </mapper>

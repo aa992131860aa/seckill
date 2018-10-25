@@ -282,8 +282,8 @@ public class StorageController {
 
         if ("export".equals(export)) {
             //获取数据
-
-            String content[][] = new String[customList.size() + 1][];
+            List<Custom> customListExport = storageService.gainCustom(0, 100000);
+            String content[][] = new String[customListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "客户名称", "备注", "法人", "法人电话", "主要财务", "财务电话", "联系人", "联系电话", "企业注册信息", "是否在租", "数量"};
@@ -294,13 +294,13 @@ public class StorageController {
             //sheet名
             String sheetName = "客户报表";
 
-            for (int i = 0; i < customList.size(); i++) {
+            for (int i = 0; i < customListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = customList.get(i).getId() + "";
-                content[i][1] = customList.get(i).getName();
-                content[i][2] = customList.get(i).getRemark();
-                List<Worker> workerList = customList.get(i).getWorkerList();
+                content[i][0] = customListExport.get(i).getId() + "";
+                content[i][1] = customListExport.get(i).getName();
+                content[i][2] = customListExport.get(i).getRemark();
+                List<Worker> workerList = customListExport.get(i).getWorkerList();
                 for (int w = 0; w < workerList.size(); w++) {
                     if ("法人".equals(workerList.get(w).getDuty())) {
                         content[i][3] = workerList.get(w).getName();
@@ -324,14 +324,14 @@ public class StorageController {
                         }
                     }
                 }
-                content[i][9] = customList.get(i).getRegisterInfo();
-                content[i][10] = customList.get(i).getIsRent();
-                content[i][11] = customList.get(i).getNum() + "";
+                content[i][9] = customListExport.get(i).getRegisterInfo();
+                content[i][10] = customListExport.get(i).getIsRent();
+                content[i][11] = customListExport.get(i).getNum() + "";
 
             }
-            content[customList.size()] = new String[title.length];
-            content[customList.size()][0] = "合计" + "";
-            content[customList.size()][11] = totalNum + "";
+            content[customListExport.size()] = new String[title.length];
+            content[customListExport.size()][0] = "合计" + "";
+            //content[customListExport.size()][11] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -380,8 +380,8 @@ public class StorageController {
 
         if ("export".equals(export)) {
             //获取数据
-
-            String content[][] = new String[customList.size()][];
+            List<Custom> customListExport = storageService.gainCustom(0,100000);
+            String content[][] = new String[customListExport.size()][];
 
             //excel标题
             String[] title = {"序号", "客户名称", "备注", "联系人", "联系电话"};
@@ -392,13 +392,13 @@ public class StorageController {
             //sheet名
             String sheetName = "客户汇总表";
 
-            for (int i = 0; i < customList.size(); i++) {
+            for (int i = 0; i < customListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = customList.get(i).getId() + "";
-                content[i][1] = customList.get(i).getName();
-                content[i][2] = customList.get(i).getRemark();
-                List<Worker> workerList = customList.get(i).getWorkerList();
+                content[i][0] = customListExport.get(i).getId() + "";
+                content[i][1] = customListExport.get(i).getName();
+                content[i][2] = customListExport.get(i).getRemark();
+                List<Worker> workerList = customListExport.get(i).getWorkerList();
                 if (workerList.size() > 0) {
                     content[i][3] = workerList.get(0).getName();
                     content[i][4] = workerList.get(0).getPhone();
@@ -463,8 +463,8 @@ public class StorageController {
         model.addAttribute("total", total);
         if ("export".equals(export)) {
             //获取数据
-
-            String content[][] = new String[customList.size()][];
+            List<Custom> customListExport = storageService.gainCustomQuery(code, linkMan, 0,100000);
+            String content[][] = new String[customListExport.size()][];
 
             //excel标题
             String[] title = {"序号", "客户名称", "备注", "联系人", "联系电话"};
@@ -475,13 +475,13 @@ public class StorageController {
             //sheet名
             String sheetName = "客户汇总表";
 
-            for (int i = 0; i < customList.size(); i++) {
+            for (int i = 0; i < customListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = customList.get(i).getId() + "";
-                content[i][1] = customList.get(i).getName();
-                content[i][2] = customList.get(i).getRemark();
-                List<Worker> workerList = customList.get(i).getWorkerList();
+                content[i][0] = customListExport.get(i).getId() + "";
+                content[i][1] = customListExport.get(i).getName();
+                content[i][2] = customListExport.get(i).getRemark();
+                List<Worker> workerList = customListExport.get(i).getWorkerList();
                 if (workerList.size() > 0) {
                     content[i][3] = workerList.get(0).getName();
                     content[i][4] = workerList.get(0).getPhone();
@@ -560,8 +560,8 @@ public class StorageController {
 
         if ("export".equals(export)) {
             //获取数据
-
-            String content[][] = new String[customList.size() + 1][];
+            List<Custom> customListExport = storageService.gainCustomQuery(code, linkMan, 0,100000);
+            String content[][] = new String[customListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "客户名称", "备注", "法人", "法人电话", "主要财务", "财务电话", "联系人", "联系电话", "企业注册信息", "是否在租", "数量"};
@@ -572,13 +572,13 @@ public class StorageController {
             //sheet名
             String sheetName = "客户报表";
 
-            for (int i = 0; i < customList.size(); i++) {
+            for (int i = 0; i < customListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = customList.get(i).getId() + "";
-                content[i][1] = customList.get(i).getName();
-                content[i][2] = customList.get(i).getRemark();
-                List<Worker> workerList = customList.get(i).getWorkerList();
+                content[i][0] = customListExport.get(i).getId() + "";
+                content[i][1] = customListExport.get(i).getName();
+                content[i][2] = customListExport.get(i).getRemark();
+                List<Worker> workerList = customListExport.get(i).getWorkerList();
                 for (int w = 0; w < workerList.size(); w++) {
                     if ("法人".equals(workerList.get(w).getDuty())) {
                         content[i][3] = workerList.get(w).getName();
@@ -602,14 +602,14 @@ public class StorageController {
                         }
                     }
                 }
-                content[i][9] = customList.get(i).getRegisterInfo();
-                content[i][10] = customList.get(i).getIsRent();
-                content[i][11] = customList.get(i).getNum() + "";
+                content[i][9] = customListExport.get(i).getRegisterInfo();
+                content[i][10] = customListExport.get(i).getIsRent();
+                content[i][11] = customListExport.get(i).getNum() + "";
 
             }
-            content[customList.size()] = new String[title.length];
-            content[customList.size()][0] = "合计" + "";
-            content[customList.size()][11] = totalNum + "";
+            content[customListExport.size()] = new String[title.length];
+            content[customListExport.size()][0] = "合计" + "";
+            //content[customListExport.size()][11] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1061,8 +1061,8 @@ public class StorageController {
 
         if ("export".equals(export) && "house".equals(house)) {
             //获取数据
-
-            String content[][] = new String[houseList.size() + 1][];
+            List<House> houseListExport = storageService.gainHouse(0,100000, type);
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "楼层", "建筑面积", "是否带窗", "状态", "数量"};
@@ -1073,21 +1073,21 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getFloor() + "";
-                content[i][4] = houseList.get(i).getBuildArea() + "";
-                content[i][5] = houseList.get(i).getIsWindow() == 1 ? "是" : "否";
-                content[i][6] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][7] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getFloor() + "";
+                content[i][4] = houseListExport.get(i).getBuildArea() + "";
+                content[i][5] = houseListExport.get(i).getIsWindow() == 1 ? "是" : "否";
+                content[i][6] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][7] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][7] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][7] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1105,8 +1105,8 @@ public class StorageController {
         }
         if ("export".equals(export) && "house_ad".equals(house)) {
             //获取数据
-
-            String content[][] = new String[houseList.size() + 1][];
+            List<House> houseListExport = storageService.gainHouse(0,100000, type);
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "楼层", "类型", "状态", "数量"};
@@ -1117,20 +1117,20 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getFloor() + "";
-                content[i][4] = houseList.get(i).getAdName() + "";
-                content[i][5] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][6] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getFloor() + "";
+                content[i][4] = houseListExport.get(i).getAdName() + "";
+                content[i][5] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][6] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][6] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][6] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1148,8 +1148,8 @@ public class StorageController {
         }
         if ("export".equals(export) && "house_car".equals(house)) {
             //获取数据
-
-            String content[][] = new String[houseList.size() + 1][];
+            List<House> houseListExport = storageService.gainHouse(0,100000, type);
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "类型", "状态", "数量"};
@@ -1160,19 +1160,19 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getAdName();
-                content[i][4] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][5] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getAdName();
+                content[i][4] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][5] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][5] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][5] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1285,9 +1285,9 @@ public class StorageController {
 
         }
         model.addAttribute("freeExportList", freeExportList);
-        model.addAttribute("page",page);
-        model.addAttribute("pageSize",CONST.PAGE_SIZE);
-        model.addAttribute("total",freeExportList.size());
+        model.addAttribute("page", page);
+        model.addAttribute("pageSize", CONST.PAGE_SIZE);
+        model.addAttribute("total", freeExportList.size());
         return "money_water";
     }
 
@@ -1497,8 +1497,8 @@ public class StorageController {
 
         if ("export".equals(export) && "house".equals(result)) {
             //获取数据
-
-            String content[][] = new String[houseList.size() + 1][];
+            List<House> houseListExport = storageService.gainHouseQuery(0,100000, type, typeId, goodsNameId, location, goodsStatusIn, floor, startTime, endTime, startArea, endArea, isWindowIn, house1, house2, house3, adTypeIn, carTypeIn);
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "楼层", "建筑面积", "是否带窗", "状态", "数量"};
@@ -1509,21 +1509,21 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getFloor() + "";
-                content[i][4] = houseList.get(i).getBuildArea() + "";
-                content[i][5] = houseList.get(i).getIsWindow() == 1 ? "是" : "否";
-                content[i][6] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][7] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getFloor() + "";
+                content[i][4] = houseListExport.get(i).getBuildArea() + "";
+                content[i][5] = houseListExport.get(i).getIsWindow() == 1 ? "是" : "否";
+                content[i][6] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][7] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][7] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][7] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1541,8 +1541,9 @@ public class StorageController {
         }
         if ("export".equals(export) && "house_ad".equals(result)) {
             //获取数据
+            List<House> houseListExport = storageService.gainHouseQuery(0,100000, type, typeId, goodsNameId, location, goodsStatusIn, floor, startTime, endTime, startArea, endArea, isWindowIn, house1, house2, house3, adTypeIn, carTypeIn);
 
-            String content[][] = new String[houseList.size() + 1][];
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "楼层", "类型", "状态", "数量"};
@@ -1553,20 +1554,20 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getFloor() + "";
-                content[i][4] = houseList.get(i).getAdName() + "";
-                content[i][5] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][6] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getFloor() + "";
+                content[i][4] = houseListExport.get(i).getAdName() + "";
+                content[i][5] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][6] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][6] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][6] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -1584,8 +1585,9 @@ public class StorageController {
         }
         if ("export".equals(export) && "house_car".equals(result)) {
             //获取数据
+            List<House> houseListExport = storageService.gainHouseQuery(0,100000, type, typeId, goodsNameId, location, goodsStatusIn, floor, startTime, endTime, startArea, endArea, isWindowIn, house1, house2, house3, adTypeIn, carTypeIn);
 
-            String content[][] = new String[houseList.size() + 1][];
+            String content[][] = new String[houseListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "商品名称", "位置编号", "类型", "状态", "数量"};
@@ -1596,19 +1598,19 @@ public class StorageController {
             //sheet名
             String sheetName = fileNameSort + "资源报表";
 
-            for (int i = 0; i < houseList.size(); i++) {
+            for (int i = 0; i < houseListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = houseList.get(i).getId() + "";
-                content[i][1] = houseList.get(i).getName();
-                content[i][2] = houseList.get(i).getLocation();
-                content[i][3] = houseList.get(i).getAdName();
-                content[i][4] = houseList.get(i).getGoodsStatusName() + "";
-                content[i][5] = houseList.get(i).getNum() + "";
+                content[i][0] = houseListExport.get(i).getId() + "";
+                content[i][1] = houseListExport.get(i).getName();
+                content[i][2] = houseListExport.get(i).getLocation();
+                content[i][3] = houseListExport.get(i).getAdName();
+                content[i][4] = houseListExport.get(i).getGoodsStatusName() + "";
+                content[i][5] = houseListExport.get(i).getNum() + "";
             }
-            content[houseList.size()] = new String[title.length];
-            content[houseList.size()][0] = "合计" + "";
-            content[houseList.size()][5] = totalNum + "";
+            content[houseListExport.size()] = new String[title.length];
+            content[houseListExport.size()][0] = "合计" + "";
+            //content[houseListExport.size()][5] = totalNum + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);

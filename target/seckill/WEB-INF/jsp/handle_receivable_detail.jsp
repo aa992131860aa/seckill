@@ -114,11 +114,41 @@
                                 <th>合同号</th>
                                 <th>应收费用</th>
                                 <th>应收时间</th>
-                                <th>违约金</th>
+                                <%--<th>违约金</th>--%>
                                 <th>详情</th>
                             </tr>
                             </thead>
                             <tbody id="shoppingTb">
+
+                            <c:forEach items="${contractFreeList}" var="list">
+                                <tr>
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="" type="text" value="1" name="useArea1"/></td>
+                                    <td colspan="2"><input disabled="disabled"
+                                                           style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                           type="text" value="${list.name}"
+                                    /></td>
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="${list.loc}"/></td>
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="${list.no}"/></td>
+
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="${list.money}"/></td>
+                                    <td><input disabled="disabled"
+                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                               id="uId " type="text" value="" name="useArea1"/></td>
+
+                                    <td nowrap="nowrap"><a id="${b.table0}a" data-toggle="modal"
+                                                           data-target="#myModal"
+                                                           style="color: #1d4499">详情</a></td>
+                                </tr>
+                            </c:forEach>
+
                             <c:forEach items="${contractList}" var="list">
 
                                 <%--table1 = id1 + flag2 + loc1 + flag2 + time1 + flag2 + useArea1 + flag2 + cash1 + flag2 + money1 + flag2 + price1;--%>
@@ -132,26 +162,24 @@
                                                    id="uId " type="text" value="${list.id}" name="useArea1"/></td>
                                         <td colspan="2"><input disabled="disabled"
                                                                style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                               id="uId " type="text" value="${ad.name}"
-                                                               name="useArea1"/></td>
+                                                               type="text" value="${ad.name}"
+                                        /></td>
                                         <td><input disabled="disabled"
                                                    style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                   id="uId " type="text" value="${ad.loc}" name="useArea1"/></td>
+                                                   id="uId " type="text" value="${ad.loc}"/></td>
                                         <td><input disabled="disabled"
                                                    style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                   id="uId " type="text" value="${list.no}" name="useArea1"/></td>
+                                                   id="uId " type="text" value="${list.no}"/></td>
 
                                         <td><input disabled="disabled"
                                                    style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                   id="uId " type="text" value="${ad.total}" name="useArea1"/></td>
+                                                   id="uId " type="text" value="${ad.total}"/></td>
 
                                         <td><input disabled="disabled"
                                                    style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
                                                    id="uId " type="text" value="${ad.date}" name="useArea1"/></td>
 
-                                        <td><input disabled="disabled"
-                                                   style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                   id="uId " type="text" value="" name="useArea1"/></td>
+
                                         <td nowrap="nowrap"><a id="${b.table0}a" data-toggle="modal"
                                                                data-target="#myModal"
                                                                style="color: #1d4499">详情</a></td>
@@ -159,6 +187,8 @@
 
                                 </c:forEach>
                             </c:forEach>
+
+
                             </tbody>
                         </table>
                     </div>
@@ -541,6 +571,35 @@
                                 </tr>
                                 </thead>
                                 <tbody id="shoppingTb">
+
+                                <c:forEach items="${contractFreeList}" var="list">
+                                    <tr>
+                                        <td>
+                                            <input
+                                                <%--<c:if test="${fn:contains(tableU, list.id+pLoop.index+loop.index+ad.loc)}"> checked="checked" </c:if>--%>
+                                                    onclick="selectMoney(this)"
+                                                    style="width: 20px;height: 20px;" checked disabled
+                                                    type="checkbox"/></td>
+
+                                        <td colspan="2"><input disabled="disabled"
+                                                               style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                               type="text" value="${list.name}"
+                                        /></td>
+
+                                        <td><input disabled="disabled"
+                                                   style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                   type="text" value="${list.no}"/></td>
+                                        <td><input disabled="disabled"
+                                                   style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                   type="text" value="${list.money}"/></td>
+
+
+                                        <td><input disabled="disabled"
+                                                   style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                   type="text" value=""/></td>
+                                    </tr>
+                                </c:forEach>
+
                                 <c:forEach items="${contractList}" var="list" varStatus="pLoop">
 
                                     <%--table1 = id1 + flag2 + loc1 + flag2 + time1 + flag2 + useArea1 + flag2 + cash1 + flag2 + money1 + flag2 + price1;--%>
@@ -564,18 +623,20 @@
                                                 <%--id="uId " type="text" value="${list.id}" name="useArea1"/></td>--%>
                                             <td colspan="2"><input disabled="disabled"
                                                                    style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                                   id="uId " type="text" value="${ad.name}"
-                                                                   name="useArea1"/></td>
+                                                                   type="text" value="${ad.name}"
+                                                                   name="name"/></td>
                                                 <%--<td><input disabled="disabled"--%>
                                                 <%--style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"--%>
                                                 <%--id="uId " type="text" value="${ad.loc}" name="useArea1"/></td>--%>
                                             <td><input disabled="disabled"
                                                        style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                       id="uId " type="text" value="${list.no}" name="useArea1"/></td>
-
+                                                       type="text" value="${list.no}" name="no"/></td>
+                                            <input
+                                                    style="display:none;border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
+                                                    type="text" value="${ad.loc}" name="loc"/>
                                             <td><input disabled="disabled"
                                                        style="border-bottom: 1px solid #dbdbdb;border-top:0px;border-left:0px;border-right:0px;border-radius:0;text-align:center"
-                                                       id="uId " type="text" value="${ad.total}" name="useArea1"/>
+                                                       type="text" value="${ad.total}" name="money"/>
 
                                             </td>
 
@@ -1608,10 +1669,10 @@
         if (remark == '') {
             remark = 'fantasy';
         }
-      //判断是否预收金额大于实收的  total moneyTotal
+        //判断是否预收金额大于实收的  total moneyTotal
         var total = $("#total").text();
         var moneyTotal = $("#moneyTotal").val();
-        if(parseFloat(moneyTotal)+parseFloat(moneyM)>parseFloat(total)){
+        if (parseFloat(moneyTotal) + parseFloat(moneyM) > parseFloat(total)) {
             mui.toast('预收金额大于应收合计,请重新输入金额', {duration: 'short', type: 'div'})
             return;
         }
@@ -1666,9 +1727,76 @@
         //         }
         //     });
         // } else
+        var flag1 = "@@";
+        var flag2 = "=";
+        var names = "";
+        var locs = "";
+        var nos = "";
+        var moneys = "";
+        var indexPosition = [];
+        var usePosition = [];
+
+        $("input[name='use']").each(function (index, item) {
+
+            if (item.disabled == false && item.checked == true) {
+                usePosition.push(index)
+
+            }
+        });
+
+        $("input[name='name']").each(function (index, item) {
+            var name = $(this).val();
+
+            for (var i = 0; i < usePosition.length; i++) {
+                if (index == usePosition[i]) {
+
+                    if (name == '水费' || name == '电费' || name == '空调费') {
+                        indexPosition.push(index);
+                        names += name + flag1;
+                    }
+                    break;
+                }
+            }
+        });
+
+        $("input[name='loc']").each(function (index, item) {
+            var loc = $(this).val();
+            for (var i = 0; i < indexPosition.length; i++) {
+                if (indexPosition[i] == index) {
+                    locs += loc + flag1;
+                    break;
+                }
+            }
+
+        });
+
+        $("input[name='no']").each(function (index, item) {
+            var no = $(this).val();
+            for (var i = 0; i < indexPosition.length; i++) {
+                if (indexPosition[i] == index) {
+                    nos += no + flag1;
+                    break;
+                }
+            }
+        });
+
+        $("input[name='money']").each(function (index, item) {
+            var money = $(this).val();
+            for (var i = 0; i < indexPosition.length; i++) {
+                if (indexPosition[i] == index) {
+                    moneys += money + flag1;
+                    break;
+                }
+            }
+        });
+
+
+        var frees = names + flag2 + locs + flag2 + nos + flag2 + moneys + flag2;
+
+
         if (t == 0 && total3 == 0) {
 
-            var url = "/seckill/handle_receivable_detail/" + codeAuto + "/" + remark + "/" + isConfirm + "/" + customId + "/isConfirm";
+            var url = "/seckill/handle_receivable_detail/" + codeAuto + "/" + remark + "/" + isConfirm + "/" + customId + "/" + frees + "/isConfirm";
 
             $.post(url, {}, function (res) {
                 mui.toast('已冲销完毕');

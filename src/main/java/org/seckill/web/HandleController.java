@@ -258,8 +258,9 @@ public class HandleController {
 
         List<Contract> contractList = handleService.gainContractFinishListQuery(code, startDate, endDate, page * CONST.PAGE_SIZE, CONST.PAGE_SIZE);
         int total = handleService.gainContractFinishListTotalQuery(code, startDate, endDate);
+        int customId = 0;
         for (int i = 0; i < contractList.size(); i++) {
-
+            customId = contractList.get(i).getCustomId();
             //获取支付日期
             String table = contractList.get(i).getTable1();
             String[] tables = table.split(flag2, -1);
@@ -339,6 +340,10 @@ public class HandleController {
                             payTotal += Double.parseDouble(tables[1].split(flag1, size)[m]);
                         }
                     }
+                }
+                List<ContractFree> contractFreeList = handleService.gainContractFreeList(customId);
+                for (ContractFree contractFree : contractFreeList) {
+                    payTotal += contractFree.getMoney();
                 }
                 payTotal = NumberToCN.parseDouble(payTotal);
                 contractList.get(i).setPayTotal(payTotal);
@@ -816,6 +821,8 @@ public class HandleController {
                 car(contractList.get(i));
             }
         }
+        List<ContractFree> contractFreeList = handleService.gainContractFreeList(customId);
+
 
         model.addAttribute("contractList", contractList);
         allTotal = NumberToCN.parseDouble(allTotal);
@@ -826,6 +833,7 @@ public class HandleController {
         model.addAttribute("tableMList", tableMList);
         model.addAttribute("tableU", tableU);
         model.addAttribute("customId", customId);
+        model.addAttribute("contractFreeList", contractFreeList);
 
         return "handle_receivable_detail_after";
     }
@@ -1726,7 +1734,14 @@ public class HandleController {
                 for (int m = 0; m < tableMList.size(); m++) {
                     tableMTotal += Double.parseDouble(tableMList.get(m).getMoneyM());
                 }
-                payTableMinus = payTotal - tableMTotal + waterTotal;
+                //已核销的水电费
+                List<ContractFree> contractFreeList = handleService.gainContractFreeList(innerContractList.get(j).getCustomId());
+                double contractFreeTotal = 0;
+                for (ContractFree contractFree : contractFreeList) {
+                    contractFreeTotal += contractFree.getMoney();
+                }
+
+                payTableMinus = payTotal - tableMTotal + waterTotal + contractFreeTotal;
 
                 tableMTotal = NumberToCN.parseDouble(tableMTotal);
                 payTotal = NumberToCN.parseDouble(payTotal);
@@ -2199,8 +2214,9 @@ public class HandleController {
         List<Contract> contractList = handleService.gainContractListAll(codeCheck, locCheck);
         int total = handleService.gainContractListTotalAll();
         double payTableMinusTotal = 0;
+        int customId = 0;
         for (int i = 0; i < contractList.size(); i++) {
-
+            customId = contractList.get(i).getCustomId();
             //获取支付日期
             String table = contractList.get(i).getTable1();
             if (table == null) {
@@ -2363,7 +2379,13 @@ public class HandleController {
                     tableMTotal += Double.parseDouble(tableMList.get(m).getMoneyM());
 
                 }
-                payTableMinus = payTotal - tableMTotal + waterTotal;
+                //已核销的水电费
+                List<ContractFree> contractFreeList = handleService.gainContractFreeList(innerContractList.get(j).getCustomId());
+                double contractFreeTotal = 0;
+                for (ContractFree contractFree : contractFreeList) {
+                    contractFreeTotal += contractFree.getMoney();
+                }
+                payTableMinus = payTotal - tableMTotal + waterTotal + contractFreeTotal;
 
                 tableMTotal = NumberToCN.parseDouble(tableMTotal);
                 payTotal = NumberToCN.parseDouble(payTotal);
@@ -2382,7 +2404,7 @@ public class HandleController {
             String date = "";
             String loc = "";
             double debt;
-            int customId = contractList.get(i).getCustomId();
+            customId = contractList.get(i).getCustomId();
 
             List<TableM> tableMList = new ArrayList<TableM>();
             List<Contract> contractListDetail = handleService.gainContractByCustomId(customId);
@@ -3205,6 +3227,11 @@ public class HandleController {
             }
         }
 
+        List<ContractFree> contractFreeList = handleService.gainContractFreeList(customId);
+        for (ContractFree contractFree : contractFreeList) {
+            allTotal += contractFree.getMoney();
+        }
+
         model.addAttribute("contractList", contractListDetail);
         allTotal = NumberToCN.parseDouble(allTotal);
         model.addAttribute("allTotal", allTotal);
@@ -3214,6 +3241,7 @@ public class HandleController {
         model.addAttribute("tableMList", tableMList);
         model.addAttribute("tableU", tableU);
         model.addAttribute("customId", customId);
+        model.addAttribute("contractFreeList", contractFreeList);
 
         return "handle_receivable_detail";
     }
@@ -3235,11 +3263,13 @@ public class HandleController {
         return isOk;
     }
 
-    @RequestMapping(value = "/handle_receivable_detail/{codeAuto}/{remark}/{isConfirm}/{id}/isConfirm", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/handle_receivable_detail/{codeAuto}/{remark}/{isConfirm}/{id}/{frees}/isConfirm", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     public int handleReceivabledelIsConfirm(Model model, HttpServletRequest request
             , @PathVariable("codeAuto") String codeAuto, @PathVariable("remark") String remark,
-                                            @PathVariable("isConfirm") int isConfirm, @PathVariable("id") int id) {
+                                            @PathVariable("isConfirm") int isConfirm, @PathVariable("id") int id, @PathVariable("frees") String frees) {
+        String flag1 = "@@";
+        String flag2 = "=";
         if ("fantasy".equals(remark)) {
             remark = "";
         }
@@ -3253,6 +3283,28 @@ public class HandleController {
         tableM = tableM.replace("@@", "fantasy@@");
         handleService.updateTableMCustomId(tableM, id);
         handleService.updateisWaterCustomId(0, id);
+
+        try {
+            int size = frees.split(flag2)[0].split(flag1).length;
+            for (int i = 0; i < size; i++) {
+                String name = frees.split(flag2)[0].split(flag1)[i];
+                String loc = frees.split(flag2)[1].split(flag1)[i];
+                String no = frees.split(flag2)[2].split(flag1)[i];
+                String money = frees.split(flag2)[3].split(flag1)[i];
+                String all = name + loc + no + money;
+                if (!"".equals(all)) {
+                    if ("".equals(money)) {
+                        money = "0";
+                    }
+                    handleService.insertContractFree(id, name, loc, no, Double.parseDouble(money));
+                }
+            }
+
+
+        } catch (Exception e) {
+            logger.error("contractFree:" + e.getMessage());
+        }
+
         return isOk;
     }
 

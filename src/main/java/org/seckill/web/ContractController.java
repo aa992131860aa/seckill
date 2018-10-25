@@ -186,12 +186,13 @@ public class ContractController {
 
     @RequestMapping(value = "/contract_house/updateWater/{isWater}/{contractUuid}/{loc}/{type}", method = RequestMethod.POST)
     @ResponseBody
-    public int updateContractWater(Model model, HttpServletRequest request, @PathVariable("type")String type,@PathVariable("contractUuid") String contractUuid, @PathVariable("isWater") int isWater, @PathVariable("loc") String loc) {
+    public int updateContractWater(Model model, HttpServletRequest request, @PathVariable("type") String type, @PathVariable("contractUuid") String contractUuid, @PathVariable("isWater") int isWater, @PathVariable("loc") String loc) {
         if (contractUuid.equals("fantasy")) {
             contractUuid = "";
         }
-        contractService.updateWaterLoc(loc,type);
-        return contractService.updateContractWater(isWater, contractUuid, loc,type);
+        contractService.updateWaterLoc(loc, type);
+        contractService.updateContractWater(isWater, contractUuid, loc, type);
+        return 1;
 
     }
 
@@ -283,8 +284,8 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
-
-            String content[][] = new String[contractList.size() + 1][];
+            List<Contract> contractListExport = contractService.gainContractListDel("", 0,100000);
+            String content[][] = new String[contractListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "审批时间", "客户名称", "联系人", "联系电话", "合同号", "类型", "数量", "金额", "经办人"};
@@ -295,17 +296,17 @@ public class ContractController {
             //sheet名
             String sheetName = "终止合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                String style = contractList.get(i).getStyle();
+                String style = contractListExport.get(i).getStyle();
                 if ("house".equals(style)) {
                     content[i][6] = "房源合同";
                 }
@@ -317,15 +318,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractList.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -395,8 +396,9 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
+            List<Contract> contractListExport = contractService.gainContractList("house", 0,100000);
 
-            String content[][] = new String[contractList.size() + 1][];
+            String content[][] = new String[contractListExport.size() + 1][];
 
             //excel标题
             String[] title = {"序号", "审批时间", "客户名称", "联系人", "联系电话", "合同号", "审批状态", "数量", "金额", "经办人"};
@@ -407,17 +409,17 @@ public class ContractController {
             //sheet名
             String sheetName = "房子租赁合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                int isOk = contractList.get(i).getIsOk();
+                int isOk = contractListExport.get(i).getIsOk();
                 if (isOk == 0) {
                     content[i][6] = "审批中";
                 }
@@ -429,15 +431,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -502,7 +504,7 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.gainContractList("ad", 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -514,17 +516,17 @@ public class ContractController {
             //sheet名
             String sheetName = "广告位合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                int isOk = contractList.get(i).getIsOk();
+                int isOk = contractListExport.get(i).getIsOk();
                 if (isOk == 0) {
                     content[i][6] = "审批中";
                 }
@@ -536,15 +538,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -609,7 +611,7 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.gainContractList("car", 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -621,17 +623,17 @@ public class ContractController {
             //sheet名
             String sheetName = "车位合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                int isOk = contractList.get(i).getIsOk();
+                int isOk = contractListExport.get(i).getIsOk();
                 if (isOk == 0) {
                     content[i][6] = "审批中";
                 }
@@ -643,15 +645,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -2478,7 +2480,7 @@ public class ContractController {
 
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.queryDel("", code, linkMan, no, "", startDate, endDate, 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -2490,17 +2492,17 @@ public class ContractController {
             //sheet名
             String sheetName = "终止合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                String style = contractList.get(i).getStyle();
+                String style = contractListExport.get(i).getStyle();
                 if ("house".equals(style)) {
                     content[i][6] = "房源合同";
                 }
@@ -2512,15 +2514,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -2611,7 +2613,7 @@ public class ContractController {
 
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.query("house", code, linkMan, no, "", startDate, endDate, 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -2623,17 +2625,17 @@ public class ContractController {
             //sheet名
             String sheetName = "房子租赁合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                int isOk = contractList.get(i).getIsOk();
+                int isOk = contractListExport.get(i).getIsOk();
                 if (isOk == 0) {
                     content[i][6] = "审批中";
                 }
@@ -2645,15 +2647,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+           // content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -2759,7 +2761,7 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.query("ad", code, linkMan, no, "", startDate, endDate, 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -2771,15 +2773,15 @@ public class ContractController {
             //sheet名
             String sheetName = "广告位合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
                 int isOk = contractList.get(i).getIsOk();
                 if (isOk == 0) {
@@ -2793,15 +2795,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
@@ -2893,7 +2895,7 @@ public class ContractController {
         model.addAttribute("payTotalAll", payTotalAll);
         if ("export".equals(export)) {
             //获取数据
-
+            List<Contract> contractListExport = contractService.query("car", code, linkMan, no, number, startDate, endDate, 0,100000);
             String content[][] = new String[contractList.size() + 1][];
 
             //excel标题
@@ -2905,17 +2907,17 @@ public class ContractController {
             //sheet名
             String sheetName = "车位合同报表";
 
-            for (int i = 0; i < contractList.size(); i++) {
+            for (int i = 0; i < contractListExport.size(); i++) {
                 content[i] = new String[title.length];
 
-                content[i][0] = contractList.get(i).getId() + "";
-                content[i][1] = contractList.get(i).getApprovalDate();
-                content[i][2] = contractList.get(i).getCodeAuto();
-                content[i][3] = contractList.get(i).getLinkMan();
-                content[i][4] = contractList.get(i).getPhone();
-                content[i][5] = contractList.get(i).getNo();
+                content[i][0] = contractListExport.get(i).getId() + "";
+                content[i][1] = contractListExport.get(i).getApprovalDate();
+                content[i][2] = contractListExport.get(i).getCodeAuto();
+                content[i][3] = contractListExport.get(i).getLinkMan();
+                content[i][4] = contractListExport.get(i).getPhone();
+                content[i][5] = contractListExport.get(i).getNo();
 
-                int isOk = contractList.get(i).getIsOk();
+                int isOk = contractListExport.get(i).getIsOk();
                 if (isOk == 0) {
                     content[i][6] = "审批中";
                 }
@@ -2927,15 +2929,15 @@ public class ContractController {
                 }
 
                 content[i][7] = 1 + "";
-                content[i][8] = contractList.get(i).getPayTotal() + "";
-                content[i][9] = contractList.get(i).getApproval();
+                content[i][8] = contractListExport.get(i).getPayTotal() + "";
+                content[i][9] = contractListExport.get(i).getApproval();
 
 
             }
-            content[contractList.size()] = new String[title.length];
-            content[contractList.size()][0] = "合计" + "";
-            content[contractList.size()][7] = contractList.size() + "";
-            content[contractList.size()][8] = payTotalAll + "";
+            content[contractListExport.size()] = new String[title.length];
+            content[contractListExport.size()][0] = "合计" + "";
+            //content[contractListExport.size()][7] = contractListExport.size() + "";
+            //content[contractListExport.size()][8] = payTotalAll + "";
 
             //创建HSSFWorkbook
             HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);

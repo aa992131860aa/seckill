@@ -374,7 +374,7 @@
             <if test="type=='power'">
                 is_power=#{isWater}
             </if>
-            <if test="type=='water'">
+            <if test="type=='air'">
                 is_air=#{isWater}
             </if>
 
@@ -390,7 +390,7 @@
             <if test="type=='power'">
                 is_power=#{isWater}
             </if>
-            <if test="type=='water'">
+            <if test="type=='air'">
                 is_air=#{isWater}
             </if>,is_ok=1 WHERE uuid=#{contractUuid}
         </if>
